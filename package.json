@@ -1,0 +1,22 @@
+{
+  "name": "p6-lemorvan-jules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juleslemorvan/JulesLeMorvan_6_17032021.git"
+  },
+  "author": "Jules Le Morvan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juleslemorvan/JulesLeMorvan_6_17032021/issues"
+  },
+  "homepage": "https://github.com/juleslemorvan/JulesLeMorvan_6_17032021#readme",
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}
