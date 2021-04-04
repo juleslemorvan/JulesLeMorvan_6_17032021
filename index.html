@@ -3,10 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <meta
+      name="description"
+      content="FishEye, site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux"
+    />
+    <link rel="shortcut icon" type="icon/svg" href="./assets/images/logo.svg" />
     <title>FishEye</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
+    <header class="header">
+      <a href="" class="header__link" aria-label="FishEye page home">
+        <img
+          class="header__logo"
+          src="./assets/images/logo.svg"
+          alt="logo FishEye"
+        />
+      </a>
+      <nav class="nav" aria-label="catégories de photographes">
+        <ul class="nav__navigation">
+          <li class="nav__navigation__item">#Portrait</li>
+          <li class="nav__navigation__item">#Art</li>
+          <li class="nav__navigation__item">#Fashion</li>
+          <li class="nav__navigation__item">#Architecture</li>
+          <li class="nav__navigation__item">#Travel</li>
+          <li class="nav__navigation__item">#Sport</li>
+          <li class="nav__navigation__item">#Animals</li>
+          <li class="nav__navigation__item">#Events</li>
+        </ul>
+      </nav>
+      <h1 class="title">Nos_Photographes</h1>
+    </header>
+
+    <main class="main">
+      <section class="allPhotograph"></section>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,82 @@
+html {
+  body {
+    font-family: $font-1;
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 2rem;
+  padding: 30px 30px;
+}
+.header__logo {
+  margin: 10px 20px;
+}
+header a {
+  margin-left: -20px;
+}
+.nav {
+  display: flex;
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-top: 0.2rem;
+    &__item {
+      color: $color-primary;
+      font-weight: 500;
+      padding: 0.3rem;
+      margin: 0.2rem;
+      border: solid 0.1rem $color-tertiary-txt;
+      border-radius: 1.5rem;
+    }
+  }
+}
+.title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+// .allPhotograph {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-template-rows: repeat(2, 1fr);
+//   grid-template-areas:
+//     "mimi elli tracy "
+//     "nabil rhode marcel";
+//   margin: 30px 30px;
+// }
+
+// #profil {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .profil__img {
+//   height: 200px;
+//   width: 200px;
+//   left: 0px;
+//   top: 0px;
+//   border-radius: 50%;
+// }
+// .profil__figure {
+// }
+
+// .legende {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   margin: 0;
+// }
+
+// .mimi {
+//   display: grid;
+//   grid-area: mimi;
+// }
