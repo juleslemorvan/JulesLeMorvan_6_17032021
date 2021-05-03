@@ -7,7 +7,7 @@ html {
 }
 .header {
   display: flex;
-  justify-content: space-between;
+  width: 70%;
   align-items: flex-start;
   height: 2rem;
   padding: 30px 30px;
@@ -20,6 +20,7 @@ header a {
 }
 .nav {
   display: flex;
+  margin-left: 35px;
   &__navigation {
     display: flex;
     justify-content: center;
@@ -36,47 +37,83 @@ header a {
     }
   }
 }
-.title {
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin-right: 30px;
+
+.homePage {
+  position: relative;
 }
 
-// .allPhotograph {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   grid-template-rows: repeat(2, 1fr);
-//   grid-template-areas:
-//     "mimi elli tracy "
-//     "nabil rhode marcel";
-//   margin: 30px 30px;
-// }
+.title {
+  position: absolute;
+  top: -66px;
+  right: -5px;
+  margin-right: 70px;
+  color: $color-primary;
+}
+.photographersCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 55px 53px;
+  padding: 5rem 1rem 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+.photographers-profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
 
-// #profil {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+  &__portrait {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .legende {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-// .profil__img {
-//   height: 200px;
-//   width: 200px;
-//   left: 0px;
-//   top: 0px;
-//   border-radius: 50%;
-// }
-// .profil__figure {
-// }
+    .name {
+      color: #d3573c;
+      padding: 10px 0 5px 10px;
+      font-size: 32px;
+      margin: 0;
+    }
+    .position {
+      padding-bottom: 5px;
+      margin: 0;
+      color: $color-primary;
+    }
+    .tagline {
+      margin: 0;
+      padding-bottom: 5px;
+    }
+    .price {
+      padding-bottom: 5px;
+      margin: 0;
+      color: #757575;
+    }
+    .tagList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
 
-// .legende {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   margin: 0;
-// }
-
-// .mimi {
-//   display: grid;
-//   grid-area: mimi;
-// }
+    .tagItem {
+      color: $color-primary;
+      font-weight: 500;
+      padding: 0.3rem;
+      margin: 0.2rem;
+      border: solid 0.1rem $color-tertiary-txt;
+      border-radius: 1.5rem;
+    }
+  }
+}
