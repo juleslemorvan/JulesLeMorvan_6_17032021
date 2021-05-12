@@ -35,6 +35,15 @@ header a {
       border: solid 0.1rem $color-tertiary-txt;
       border-radius: 1.5rem;
     }
+    &__item:hover {
+      background-color: $color-primary;
+      color: #fff;
+      transition: 0.9s;
+    }
+    &__item.active {
+      background-color: $color-primary;
+      color: #fff;
+    }
   }
 }
 
@@ -58,62 +67,99 @@ header a {
   margin: 0;
   align-items: center;
   justify-content: center;
-}
-.photographers-profil {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 3rem;
 
-  &__portrait {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .legende {
+  .photographers-profil {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 3rem;
+    display: none;
 
-    .name {
-      color: #d3573c;
-      padding: 10px 0 5px 10px;
-      font-size: 32px;
-      margin: 0;
+    &__portrait {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
     }
-    .position {
-      padding-bottom: 5px;
-      margin: 0;
-      color: $color-primary;
-    }
-    .tagline {
-      margin: 0;
-      padding-bottom: 5px;
-    }
-    .price {
-      padding-bottom: 5px;
-      margin: 0;
-      color: #757575;
-    }
-    .tagList {
+    .legende {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 0;
-      padding: 0;
-    }
 
-    .tagItem {
-      color: $color-primary;
-      font-weight: 500;
-      padding: 0.3rem;
-      margin: 0.2rem;
-      border: solid 0.1rem $color-tertiary-txt;
-      border-radius: 1.5rem;
+      .name {
+        color: #d3573c;
+        padding: 10px 0 5px 10px;
+        font-size: 32px;
+        margin: 0;
+      }
+      .position {
+        padding-bottom: 5px;
+        margin: 0;
+        color: $color-primary;
+      }
+      .tagline {
+        margin: 0;
+        padding-bottom: 5px;
+      }
+      .price {
+        padding-bottom: 5px;
+        margin: 0;
+        color: #757575;
+      }
+      .tagList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tagItem {
+        color: $color-primary;
+        font-weight: 500;
+        padding: 0.3rem;
+        margin: 0.2rem;
+        border: solid 0.1rem $color-tertiary-txt;
+        border-radius: 1.5rem;
+      }
+    }
+  }
+  &.portrait {
+    .photographers-profil.portrait {
+      display: flex;
+    }
+  }
+  &.art {
+    .photographers-profil.art {
+      display: flex;
+    }
+  }
+  &.events {
+    .photographers-profil.events {
+      display: flex;
+    }
+  }
+  &.travel {
+    .photographers-profil.travel {
+      display: flex;
+    }
+  }
+  &.animals {
+    .photographers-profil.animals {
+      display: flex;
+    }
+  }
+  &.fashion {
+    .photographers-profil.fashion {
+      display: flex;
+    }
+  }
+  &.sport {
+    .photographers-profil.sport {
+      display: flex;
     }
   }
 }

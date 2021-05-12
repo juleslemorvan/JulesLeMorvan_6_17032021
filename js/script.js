@@ -7,10 +7,15 @@ function onClickNavTag() {
   const tags = document.querySelectorAll(".nav__navigation__item");
   tags.forEach((tag) => {
     tag.addEventListener("click", (e) => {
-      console.log(e.target.textContent);
+      console.log(e.target.getAttribute("target"));
       e.target.classList.toggle("active");
+      photographersCards.classList.toggle(e.target.getAttribute("target"));
     });
   });
+}
+
+function displayTagsClass(tags) {
+  return tags.join(" ");
 }
 
 function displayTags(tags) {
@@ -31,7 +36,10 @@ function displayPhotographerFromData(data) {
     console.log(photographer);
 
     photographersCards.innerHTML += `
-            <figure  class="photographers-profil">
+            <figure  class="photographers-profil ${displayTagsClass(
+              photographer.tags
+            )}" >
+
               <a href="./photographer-page.html?id=${photographer.id}">
                   <img
                     class="photographers-profil__portrait"
