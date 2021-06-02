@@ -28,6 +28,7 @@ header a {
     align-items: flex-start;
     padding-top: 0.2rem;
     &__item {
+      cursor: pointer;
       color: $color-primary;
       font-weight: 500;
       padding: 0.3rem;
@@ -38,7 +39,7 @@ header a {
     &__item:hover {
       background-color: $color-primary;
       color: #fff;
-      transition: 0.9s;
+      transition: 0.6s;
     }
     &__item.active {
       background-color: $color-primary;
@@ -127,6 +128,17 @@ header a {
       }
     }
   }
+
+  .photographers-profil {
+    display: none;
+  }
+
+  &.all {
+    .photographers-profil {
+      display: flex;
+    }
+  }
+
   &.portrait {
     .photographers-profil.portrait {
       display: flex;
@@ -159,6 +171,11 @@ header a {
   }
   &.sport {
     .photographers-profil.sport {
+      display: flex;
+    }
+  }
+  &.architecture {
+    .photographers-profil.architecture {
       display: flex;
     }
   }

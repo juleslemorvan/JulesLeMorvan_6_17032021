@@ -3,6 +3,18 @@
 const data = "./data.json";
 const photographersCards = document.getElementById("photographersCards");
 
+// Data from json file
+fetch("./data.json")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    displayPhotographerFromData(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 function onClickNavTag() {
   const tags = document.querySelectorAll(".nav__navigation__item");
   tags.forEach((tag) => {
@@ -10,6 +22,14 @@ function onClickNavTag() {
       console.log(e.target.getAttribute("target"));
       e.target.classList.toggle("active");
       photographersCards.classList.toggle(e.target.getAttribute("target"));
+      const actives = document.querySelectorAll(
+        ".nav__navigation__item.active"
+      );
+      if (actives.length === 0) {
+        photographersCards.classList.add("all");
+      } else {
+        photographersCards.classList.remove("all");
+      }
     });
   });
 }
@@ -36,7 +56,7 @@ function displayPhotographerFromData(data) {
     console.log(photographer);
 
     photographersCards.innerHTML += `
-            <figure  class="photographers-profil ${displayTagsClass(
+            <figure class="photographers-profil ${displayTagsClass(
               photographer.tags
             )}" >
 
@@ -61,15 +81,3 @@ function displayPhotographerFromData(data) {
   });
   onClickNavTag();
 }
-
-// Data from json file
-fetch("./data.json")
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    displayPhotographerFromData(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
