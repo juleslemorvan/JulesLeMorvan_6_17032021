@@ -23,23 +23,34 @@
       </header>
       <main class="photographer-container">
         <div class="photographerInfos" id="photographerInfos">
-          <h1 class="photographerInfos-name">name</h1>
-          <p class="photographerInfos-location">location</p>
-          <p class="photographerInfos-line">line</p>
-          <ul class="photographerInfos-tags">
-            tags
-          </ul>
-          <button class="photographerInfos-contact">contactez moi</button>
-          <picture class="photographerInfos-picture">
-            <img
-              class="photographerInfos-img"
-              src=""
-              alt="photo portrait du photographe"
-            />
-          </picture>
+          <div class="photographerInfos-left">
+            <p class="photographerInfos-name">Mimi Keel</p>
+            <p class="photographerInfos-location">London, UK</p>
+            <p class="photographerInfos-line">Voir le beau dans le quotidien</p>
+            <ul class="photographerInfos-tags">
+              tags
+            </ul>
+          </div>
+          <div class="photographerInfos-center">
+            <button class="photographerInfos-contact">Contactez-moi</button>
+          </div>
+          <div class="photographerInfos-right">
+            <picture class="photographerInfos-picture">
+              <img
+                class="photographerInfos-img"
+                src="./assets/images/Portraits/MimiKeel.jpg"
+                alt="photo portrait du photographe"
+              />
+            </picture>
+          </div>
         </div>
         <div class="photographer-select-tags">
-          <label>Trier par</label>
+          <label class="labelTag">Trier par</label>
+          <select class="selectOptions" id="selectOptions">
+            <option value="option1">Popularité</option>
+            <option value="option2">Date</option>
+            <option value="option3">Titre</option>
+          </select>
         </div>
       </main>
     </div>

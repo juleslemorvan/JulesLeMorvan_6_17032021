@@ -18,16 +18,17 @@ fetch("./data.json")
       (photographer) => photographer.id === parseInt(id)
     );
     console.log(photographer);
-    displayPhotographerInfosFromData();
+
+    displayPhotographerInfosFromData(photographer);
   })
   .catch((err) => {
     console.log(err);
   });
 
-function displayPhotographerInfosFromData() {
+function displayPhotographerInfosFromData(photographer) {
   const photographersInfos = document.getElementById("photographerInfos");
 
   photographersInfos.innerHTML += `
-            <p></p>
+            <p>${photographer.name}</p>
         `;
 }

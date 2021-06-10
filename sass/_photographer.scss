@@ -1,7 +1,14 @@
+html {
+  body {
+    font-family: $font-1;
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
 .photographer-page {
   padding-left: 70px;
   padding-right: 70px;
-  max-width: 1440px;
 }
 
 .photographer-header {
@@ -17,4 +24,76 @@
   width: 100%;
   height: 300px;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.photographerInfos-left {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 45px 50px;
+}
+.photographerInfos-name {
+  color: $color-secondary;
+  font-size: 60px;
+  margin: 0;
+}
+.photographerInfos-location {
+  margin: 20px 0 0 0;
+  color: $color-primary;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.photographerInfos-line {
+  color: #616060;
+  font-size: 20px;
+}
+.photographerInfos-center {
+  width: 20%;
+}
+
+.photographerInfos-contact {
+  cursor: pointer;
+  position: absolute;
+  top: 45px;
+  background: $color-primary;
+  height: 70px;
+  width: 180px;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+}
+
+.photographerInfos-right {
+  width: 40%;
+}
+
+.photographerInfos-img {
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  object-fit: cover;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+}
+
+.labelTag {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.selectOptions {
+  background: $color-primary;
+  color: white;
+  border-radius: 10px;
+  height: 50px;
+  width: 150px;
+}
+
+.selectOptions:after {
+  background: $color-primary;
 }
