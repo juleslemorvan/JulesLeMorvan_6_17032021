@@ -25,10 +25,45 @@ fetch("./data.json")
     console.log(err);
   });
 
+function displayTagsPhotographer(tags) {
+  return tags.join(" ");
+}
+
+function displayTagsOk(tags) {
+  return `
+           <ul class="tagList">
+           ${tags
+             .map(function (tag) {
+               return `<li class="tagItem">#${tag}</li>`;
+             })
+             .join(" ")}
+           </ul>
+           `;
+}
+
 function displayPhotographerInfosFromData(photographer) {
   const photographersInfos = document.getElementById("photographerInfos");
 
   photographersInfos.innerHTML += `
-            <p>${photographer.name}</p>
+            <div class="photographerInfos-left">
+            <p class="photographerInfos-name">${photographer.name}</p>
+            <p class="photographerInfos-location">${photographer.city}, ${
+    photographer.country
+  }</p>
+            <p class="photographerInfos-line">${photographer.tagline}</p>
+            ${displayTagsOk(photographer.tags)}
+          </div>
+          <div class="photographerInfos-center">
+            <button class="photographerInfos-contact">Contactez-moi</button>
+          </div>
+          <div class="photographerInfos-right">
+            <picture class="photographerInfos-picture">
+              <img
+                class="photographerInfos-img"
+                src="./assets/images/Portraits/${photographer.portrait}"
+                alt="photo portrait du photographe"
+              />
+            </picture>
+          </div>
         `;
 }
