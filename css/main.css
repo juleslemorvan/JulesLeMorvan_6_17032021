@@ -637,7 +637,7 @@ html body {
 
 .tagItem {
   color: #901c1c;
-  font-weight: 500;
+  font-weight: bolder;
   padding: 0.3rem;
   margin: 0.2rem;
   border: solid 0.1rem #525252;

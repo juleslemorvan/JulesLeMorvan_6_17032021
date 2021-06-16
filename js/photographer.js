@@ -20,6 +20,11 @@ fetch("./data.json")
     console.log(photographer);
 
     displayPhotographerInfosFromData(photographer);
+
+    const media = data.media.filter(
+      (media) => media.photographerId === parseInt(id)
+    );
+    console.log(media);
   })
   .catch((err) => {
     console.log(err);
@@ -54,7 +59,7 @@ function displayPhotographerInfosFromData(photographer) {
             ${displayTagsOk(photographer.tags)}
           </div>
           <div class="photographerInfos-center">
-            <button class="photographerInfos-contact">Contactez-moi</button>
+            <button class="modalBtn" id="modalBtn">Contactez-moi</button>
           </div>
           <div class="photographerInfos-right">
             <picture class="photographerInfos-picture">
