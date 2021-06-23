@@ -1,41 +1,26 @@
-// DOM
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
-const closeBtn = document.querySelector(".close");
-const submitForm = document.getElementById("submit");
-const form = document.getElementById("form");
-const successForm = document.getElementById("successForm");
-const successBtn = document.getElementById("successBtn");
+let modalbg;
+let modalBtn;
+let formData;
+let closeBtn;
+let submitForm;
+let form;
+let successForm;
+let SuccessBtn;
+let first;
+let last;
+let error;
 
-// INPUT ET ERROR
-
-const first = document.getElementById("first");
-const last = document.getElementById("last");
-const email = document.getElementById("email");
-
-const error = document.querySelectorAll("[data-error]");
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+let formOk;
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  console.log("LAUNCH");
 }
-
-// close modal event
-closeBtn.addEventListener("click", closeModal);
 
 function closeModal() {
   modalbg.style.display = "none";
 }
-
-let formOk = true;
-
-// button and message success hidden
-successForm.style.display = "none";
-successBtn.style.display = "none";
 
 // Function input firstName must contain at least 2 characters and match the regex
 function checkFirst() {
@@ -90,8 +75,6 @@ function checkEmail() {
 
 //function Validate form
 
-form.addEventListener("submit", validate);
-
 function validate(event) {
   event.preventDefault();
   formOk = true;
@@ -113,4 +96,40 @@ function validate(event) {
     successForm.style.display = "flex";
     successBtn.addEventListener("click", closeModal);
   }
+}
+
+function initModal() {
+  modalbg = document.querySelector(".bground");
+  console.log("modalbg", modalbg);
+
+  modalBtn = document.querySelectorAll(".modal-btn");
+  console.log("modalBtn", modalBtn);
+
+  formData = document.querySelectorAll(".formData");
+  closeBtn = document.querySelector(".close");
+  submitForm = document.getElementById("submit");
+  form = document.getElementById("form");
+  successForm = document.getElementById("successForm");
+  successBtn = document.getElementById("successBtn");
+
+  // INPUT ET ERROR
+
+  first = document.getElementById("first");
+  last = document.getElementById("last");
+  email = document.getElementById("email");
+
+  error = document.querySelectorAll("[data-error]");
+
+  formOk = true;
+
+  // button and message success hidden
+  successForm.style.display = "none";
+  successBtn.style.display = "none";
+  // launch modal event
+  modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
+  // close modal event
+  closeBtn.addEventListener("click", closeModal);
+
+  form.addEventListener("submit", validate);
 }

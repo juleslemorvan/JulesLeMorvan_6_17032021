@@ -25,7 +25,7 @@ fetch("./data.json")
       (media) => media.photographerId === parseInt(id)
     );
     console.log(media);
-    displayMediaFromData(media);
+    displayMediaFromData(photographer, media);
   })
   .catch((err) => {
     console.log(err);
@@ -72,10 +72,12 @@ function displayPhotographerInfosFromData(photographer) {
             </a>
           </div>
         `;
+  initModal();
 }
 
-function displayMediaFromData(media) {
+function displayMediaFromData(photographer, media) {
   const photographersMedias = document.getElementById("photographersMedias");
+  const name = photographer.name.split(" ")[0].replace("-", " ");
   media.forEach((media) => {
     photographersMedias.innerHTML += `
 
@@ -84,7 +86,7 @@ function displayMediaFromData(media) {
                 <a class="photographerMedia">
                   <img
                     class="photographerMedia-img"
-                    src="./assets/images/${media.image}"
+                    src="./assets/images/${name}/${media.image}"
                     alt="media"
                   />
                 </a>
