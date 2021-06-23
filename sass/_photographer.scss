@@ -53,8 +53,6 @@ html {
 }
 .tagList {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -73,7 +71,7 @@ html {
   width: 20%;
 }
 
-.photographerInfos-contact {
+.modalBtn {
   cursor: pointer;
   position: absolute;
   top: 45px;
@@ -116,19 +114,26 @@ html {
   background: $color-primary;
 }
 
-.tagList {
+//media
+
+.photographersMedias {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.media-photographer {
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  padding-bottom: 3rem;
 }
-.tagItem {
-  color: $color-primary;
-  font-weight: bolder;
-  padding: 0.3rem;
-  margin: 0.2rem;
-  border: solid 0.1rem $color-tertiary-txt;
-  border-radius: 1.5rem;
+.photographerMedia-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.legendeMedia {
+  display: flex;
 }

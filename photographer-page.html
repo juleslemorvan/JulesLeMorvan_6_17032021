@@ -23,18 +23,88 @@
       </header>
       <main class="photographer-container">
         <div class="photographerInfos" id="photographerInfos"></div>
-        <div class="photographer-select-tags">
-          <label class="labelTag">Trier par</label>
-          <select class="selectOptions" id="selectOptions">
-            <option value="option1">Popularité</option>
-            <option value="option2">Date</option>
-            <option value="option3">Titre</option>
-          </select>
+        <div class="select-tags">
+          <div class="custom-select">
+            <span class="instruction">trier par </span>
+            <select>
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+              <option value="3">Citroen</option>
+            </select>
+          </div>
         </div>
+        <section class="photographersMedias" id="photographersMedias"></section>
       </main>
     </div>
-    <div id="modal"></div>
+    <div class="bground">
+        <div class="content">
+          <span class="close"></span>
+          <div class="modal-body">
+            <h1>Contactez moi</h1>
+            <form
+              id="form"
+              name="reserve"
+              action="index.html"
+              method="POST"
+              novalidate
+            >
+              <div
+                class="formData">
+                <label for="first">Prénom</label><br>
+                <input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                /><br>
+              </div>
+              
+              <div
+                class="formData">
+                <label for="last">Nom</label><br>
+                <input
+                  class="text-control"
+                  type="text"
+                  id="last"
+                  name="last"
+                /><br>
+              </div>
+              
+              <div
+                class="formData">
+                <label for="email">E-mail</label><br>
+                <input
+                  class="text-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                /><br>
+              </div>
+      
+              <input
+                id="submitForm"
+                class="btn-submit"
+                type="submit"
+                class="button"
+                value="C'est parti"
+
+              />
+              </div>
+          <div id="successForm">Merci ! 
+            <br>Votre réservation a été effectué.
+          </div> 
+           <input
+            id="successBtn"
+            class="button btn-submit"
+            type="button"
+            value="Close"
+          />
+        </div> 
+            </form>
+          </div>
   </body>
+  <script src="./js/btnSelectTags.js"></script>
   <script src="./js/modal.js"></script>
   <script src="./js/photographer.js"></script>
 </html>

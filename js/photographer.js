@@ -25,6 +25,7 @@ fetch("./data.json")
       (media) => media.photographerId === parseInt(id)
     );
     console.log(media);
+    displayMediaFromData(media);
   })
   .catch((err) => {
     console.log(err);
@@ -62,13 +63,39 @@ function displayPhotographerInfosFromData(photographer) {
             <button class="modalBtn" id="modalBtn">Contactez-moi</button>
           </div>
           <div class="photographerInfos-right">
-            <picture class="photographerInfos-picture">
+            <a class="photographerInfos-picture">
               <img
                 class="photographerInfos-img"
                 src="./assets/images/Portraits/${photographer.portrait}"
                 alt="photo portrait du photographe"
               />
-            </picture>
+            </a>
           </div>
         `;
+}
+
+function displayMediaFromData(media) {
+  const photographersMedias = document.getElementById("photographersMedias");
+  media.forEach((media) => {
+    photographersMedias.innerHTML += `
+
+            <article class="media-photographer">
+              <figure>
+                <a class="photographerMedia">
+                  <img
+                    class="photographerMedia-img"
+                    src="./assets/images/${media.image}"
+                    alt="media"
+                  />
+                </a>
+                <figcaption class="legendeMedia">
+                  <p class="titleMedia"></p>
+                  <p class="prixmedia">${media.price} €</p>
+                  <p class="likeMedia">${media.likes}</p>
+                </figcaption>
+              </figure>
+            </article>
+
+        `;
+  });
 }
