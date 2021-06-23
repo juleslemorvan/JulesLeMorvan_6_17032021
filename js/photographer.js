@@ -91,9 +91,9 @@ function displayMediaFromData(photographer, media) {
                   />
                 </a>
                 <figcaption class="legendeMedia">
-                  <p class="titleMedia"></p>
-                  <p class="prixmedia">${media.price} €</p>
-                  <p class="likeMedia">${media.likes}</p>
+                  <p class="titleMedia">${media.titleMedia}</p>
+                  <p class="prixMedia">${media.price}€</p>
+                  <p class="likeMedia">${media.likes}<i class="fas fa-heart"></i></p>
                 </figcaption>
               </figure>
             </article>

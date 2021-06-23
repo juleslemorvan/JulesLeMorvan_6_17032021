@@ -8,6 +8,7 @@ let successForm;
 let SuccessBtn;
 let first;
 let last;
+let textarea;
 let error;
 
 let formOk;
@@ -15,7 +16,6 @@ let formOk;
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
-  console.log("LAUNCH");
 }
 
 function closeModal() {
@@ -102,7 +102,7 @@ function initModal() {
   modalbg = document.querySelector(".bground");
   console.log("modalbg", modalbg);
 
-  modalBtn = document.querySelectorAll(".modal-btn");
+  modalBtn = document.querySelectorAll(".modalBtn");
   console.log("modalBtn", modalBtn);
 
   formData = document.querySelectorAll(".formData");
@@ -117,6 +117,7 @@ function initModal() {
   first = document.getElementById("first");
   last = document.getElementById("last");
   email = document.getElementById("email");
+  textarea = document.getElementById("textarea");
 
   error = document.querySelectorAll("[data-error]");
 

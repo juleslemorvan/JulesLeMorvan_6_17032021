@@ -139,9 +139,11 @@ main {
 }
 
 /* Modal form */
-
+h1 {
+  color: black;
+}
 .button {
-  background: #fe142f;
+  background: $color-secondary;
   margin-top: 0.5em;
   padding: 1em;
   color: #fff;
@@ -167,7 +169,7 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
+  background-color: rgba(177, 176, 176, 0.4);
 }
 
 .content {
@@ -176,7 +178,7 @@ main {
   max-width: 500px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
-  background: #232323;
+  background: rgb(243, 153, 118);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -194,7 +196,9 @@ label {
   font-size: 17px;
   font-weight: normal;
   display: inline-block;
+  margin-top: 11px;
   margin-bottom: 11px;
+  color: black;
 }
 input {
   padding: 8px;
@@ -304,6 +308,7 @@ input {
   width: 32px;
   height: 32px;
   opacity: 1;
+  color: black;
   cursor: pointer;
   transform: scale(0.7);
 }
@@ -324,12 +329,12 @@ input {
 }
 .btn-submit,
 .btn-signup {
-  background: #fe142f;
+  background: $color-primary;
   display: block;
-  margin: 0 auto;
+  margin-top: 18px;
   border-radius: 7px;
   font-size: 1rem;
-  padding: 12px 82px;
+  padding: 22px 82px;
   color: #fff;
   cursor: pointer;
   border: 0;

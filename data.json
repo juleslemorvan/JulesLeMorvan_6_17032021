@@ -319,6 +319,7 @@
       "photographerId": 243,
       "image": "Travel_Lonesome.jpg",
       "tags": ["travel"],
+      "titleMedia": "Solitude",
       "likes": 88,
       "date": "2019-02-03",
       "price": 45
@@ -328,6 +329,7 @@
       "photographerId": 243,
       "image": "Travel_HillsideColor.jpg",
       "tags": ["travel"],
+      "titleMedia": "Village méditéranéen",
       "likes": 85,
       "date": "2019-04-03",
       "price": 45
@@ -337,6 +339,7 @@
       "photographerId": 243,
       "image": "Portrait_Wednesday.jpg",
       "tags": ["portait"],
+      "titleMedia": "Portrait d'enfant",
       "likes": 34,
       "date": "2019-04-07",
       "price": 45
@@ -346,6 +349,7 @@
       "photographerId": 243,
       "image": "Portrait_Nora.jpg",
       "tags": ["portait"],
+      "titleMedia": "Portrait de femme",
       "likes": 63,
       "date": "2019-04-07",
       "price": 45
@@ -355,6 +359,7 @@
       "photographerId": 243,
       "image": "Portrait_Background.jpg",
       "tags": ["portait"],
+      "titleMedia": "Portrait de femme",
       "likes": 55,
       "date": "2019-06-20",
       "price": 45
@@ -364,6 +369,7 @@
       "photographerId": 243,
       "image": "Event_SeasideWedding.jpg",
       "tags": ["events"],
+      "titleMedia": "Marriage à la mer",
       "likes": 25,
       "date": "2019-06-21",
       "price": 45
@@ -373,6 +379,7 @@
       "photographerId": 243,
       "image": "Event_PintoWedding.jpg",
       "tags": ["events"],
+      "titleMedia": "Photo de marriage",
       "likes": 52,
       "date": "2019-06-25",
       "price": 45
@@ -382,6 +389,7 @@
       "photographerId": 243,
       "image": "Event_BenevidesWedding.jpg",
       "tags": ["events"],
+      "titleMedia": "Danse des marriés",
       "likes": 77,
       "date": "2019-06-28",
       "price": 45
@@ -400,6 +408,7 @@
       "photographerId": 243,
       "image": "Animals_Rainbow.jpg",
       "tags": ["animals"],
+      "titleMedia": "Animaux colorés",
       "likes": 59,
       "date": "2019-07-02",
       "price": 60
