@@ -25,6 +25,7 @@ fetch("./data.json")
       (media) => media.photographerId === parseInt(id)
     );
     console.log(media);
+    displayLikesAndPriceFromData(photographer, media);
     displayMediaFromData(photographer, media);
   })
   .catch((err) => {
@@ -100,4 +101,21 @@ function displayMediaFromData(photographer, media) {
 
         `;
   });
+}
+
+function displayLikesAndPriceFromData(photographer, media) {
+  const likesAndPrice = document.getElementById("likesAndPrice");
+  likesAndPrice.innerHTML += `
+  <div class="bottomLikesAndPrice">
+  <p>${countLikes(media)}<i class="fas fa-heart"></i></p>
+  <p>${photographer.price} €/jour</p>
+  </div>
+  `;
+}
+function countLikes(media) {
+  let total = 0;
+  media.forEach((media) => {
+    total += media.likes;
+  });
+  return total;
 }

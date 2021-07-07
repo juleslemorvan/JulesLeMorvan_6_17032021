@@ -163,3 +163,20 @@ html {
 .likeMedia i {
   margin-left: 5px;
 }
+
+.likesAndPrice {
+  position: fixed;
+  height: 60px;
+  width: 300px;
+  bottom: 0;
+  right: 30px;
+  background: #f77c61;
+  border-radius: 6px;
+}
+.bottomLikesAndPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  height: 100%;
+}

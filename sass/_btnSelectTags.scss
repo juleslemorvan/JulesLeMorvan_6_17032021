@@ -8,16 +8,18 @@
 }
 
 .instruction {
-  margin-right: 30px;
+  margin-right: 10px;
   font-weight: 400;
-  font-size: 30px;
+  width: 140px;
+  font-size: 25px;
 }
 .custom-select select {
   display: none; /*hide original SELECT element: */
 }
 
 .select-selected {
-  background-color: DodgerBlue;
+  background-color: $color-primary;
+  width: 200px;
 }
 
 /* Style the arrow inside the select element: */
@@ -25,7 +27,7 @@
   position: absolute;
   content: "";
   top: 14px;
-  right: 10px;
+  right: 5px;
   width: 0;
   height: 0;
   border: 6px solid transparent;
@@ -51,10 +53,11 @@
 /* Style items (options): */
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  border-radius: 8px;
+  background-color: $color-primary;
   top: 100%;
-  left: 0;
-  right: 0;
+  left: 151px;
+  right: 48px;
   z-index: 99;
 }
 
