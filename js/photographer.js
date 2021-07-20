@@ -17,14 +17,13 @@ fetch("./data.json")
     const photographer = data.photographers.find(
       (photographer) => photographer.id === parseInt(id)
     );
-    console.log(photographer);
 
     displayPhotographerInfosFromData(photographer);
 
     const media = data.media.filter(
       (media) => media.photographerId === parseInt(id)
     );
-    console.log(media);
+
     displayLikesAndPriceFromData(photographer, media);
     displayMediaFromData(photographer, media);
   })
@@ -76,31 +75,54 @@ function displayPhotographerInfosFromData(photographer) {
   initModal();
 }
 
-function displayMediaFromData(photographer, media) {
+function displayMediaFromData(photographer, medias) {
   const photographersMedias = document.getElementById("photographersMedias");
   const name = photographer.name.split(" ")[0].replace("-", " ");
-  media.forEach((media) => {
-    photographersMedias.innerHTML += `
+  orderMediaByPrice(medias);
+  medias.forEach((media, index) => {
+    console.log(getFileExtension(media));
+    if (getFileExtension(media) == "jpg") {
+      photographersMedias.innerHTML += `
 
-            <article class="media-photographer">
+            <article id="${
+              media.id
+            }" class="media-photographer" onclick="openModal(); currentSlide(${
+        index + 1
+      })">
               <figure>
                 <a class="photographerMedia">
                   <img
                     class="photographerMedia-img"
                     src="./assets/images/${name}/${media.image}"
                     alt="media"
+                    
                   />
                 </a>
                 <figcaption class="legendeMedia">
                   <p class="titleMedia">${media.titleMedia}</p>
                   <p class="prixMedia">${media.price}€</p>
-                  <p class="likeMedia">${media.likes}<i class="fas fa-heart"></i></p>
+                  <p class="likeMedia">${
+                    media.likes
+                  }<i class="fas fa-heart"></i></p>
                 </figcaption>
               </figure>
             </article>
 
         `;
+    }
+
+    displayMediaLightbox(media, name);
   });
+}
+
+function getFileExtension(media) {
+  let array;
+  if (media.image != undefined) {
+    array = media.image.split(".");
+  } else {
+    array = media.video.split(".");
+  }
+  return array[array.length - 1];
 }
 
 function displayLikesAndPriceFromData(photographer, media) {
@@ -118,4 +140,27 @@ function countLikes(media) {
     total += media.likes;
   });
   return total;
+}
+// 100, 0, 10 --> base
+
+// 0, 100, 10
+// 0, 10, 100
+function compare(media1, media2) {
+  if (media1.price > media2.price) {
+    return 1;
+  } else if (media1.price < media2.price) {
+    return -1;
+  } else {
+    return 0;
+  }
+}
+
+function orderMediaByPrice(JSON_medias) {
+  let medias = document.querySelectorAll(".media-photographer");
+  for (let i = 0; i < medias.length; i++) {
+    medias[i].remove();
+  }
+
+  JSON_medias.sort(compare);
+  console.log(JSON_medias);
 }
