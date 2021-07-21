@@ -13,9 +13,8 @@ function displayMediaLightbox(media, name) {
   if (fileExtension == "jpg") {
     modalContent.innerHTML += `
     <div class="mySlides">
-      <img src="assets/images/${name}/${media.image}" style="width:100%; height: 50%">
+      <img src="assets/images/${name}/${media.image}" style="width:100%">
     </div>
-    
     `;
   } else {
     modalContent.innerHTML += `
