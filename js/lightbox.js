@@ -2,7 +2,7 @@ function displayMediaLightbox(media, name) {
   const modalContent = document.getElementById("modal-content");
   let splittedPath;
   //console.log(media.image);
-  if (media.image != undefined) {
+  if (!media.video) {
     splittedPath = media.image.split(".");
   } else {
     splittedPath = media.video.split(".");
@@ -19,7 +19,7 @@ function displayMediaLightbox(media, name) {
   } else {
     modalContent.innerHTML += `
     <div class="mySlides">
-      <video width="100%" height="100%" controls>
+      <video class="videoModal" width="80%" height="100%" controls>
         <source src="assets/images/${name}/${media.video}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
