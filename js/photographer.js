@@ -78,10 +78,7 @@ function displayPhotographerInfosFromData(photographer) {
 function displayMediaFromData(photographer, medias) {
   const photographersMedias = document.getElementById("photographersMedias");
   const name = photographer.name.split(" ")[0].replace("-", " ");
-  orderMediaByPrice(medias);
-  document.getElementById("item3").addEventListener("click", function () {
-    orderMediaByPopularity(medias);
-  });
+
   medias.forEach((media, index) => {
     photographersMedias.innerHTML += `
 
@@ -112,6 +109,15 @@ function displayMediaFromData(photographer, medias) {
         `;
 
     displayMediaLightbox(media, name);
+    addLikes();
+  });
+}
+
+function addLikes() {
+  const likes = document.querySelector(".likeMedia");
+  likes.addEventListener("click", (e) => {
+    e.stopPropagation();
+    console.log("yo");
   });
 }
 

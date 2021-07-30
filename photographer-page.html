@@ -27,33 +27,27 @@
       </header>
       <main class="photographer-container">
         <div class="photographerInfos" id="photographerInfos"></div>
-        <details class="custom-select">
-	<summary class="radios">
-		<input type="radio" name="item" id="default" title="Auswählen..." checked>
-		<input type="radio" name="item" id="item1" title="Item 1">
-		<input type="radio" name="item" id="item2" title="Item 2">
-		<input type="radio" name="item" id="item3" title="Item 3">
-		<input type="radio" name="item" id="item4" title="Item 4">
-		<input type="radio" name="item" id="item5" title="Item 5">
-	</summary>
-	<ul class="list ul-select">
-		<li>
-			<label for="item1">Item 1</label>
-		</li>
-		<li>
-			<label for="item2">Item 2</label>
-		</li>
-		<li>
-			<label for="item3" id="item3">Item 3</label>
-		</li>
-		<li>
-			<label for="item4">Item 4</label>
-		</li>
-		<li>
-			<label for="item5">Item 5</label>
-		</li>
-	</ul>
-</details>
+        <div class="select-container">
+        <p>Trier par</p>
+        <div class="button-select">
+          <div class="selected-item" id="selected-option">
+            <p class="selected-text" id="selected-text">Popularity</p>
+            <i class="fas fa-arrow-down" id="arrow-down"></i>
+            <i class="fas fa-arrow-up" id="arrow-up"></i>
+          </div>
+          <div class="option-item" id="order-price">Price</div>
+          <div class="option-item" id="order-date">Date</div>
+        </div>
+        </div>
+        <!-- <div class="select" tabindex="1">
+          <input class="selectopt" name="test" type="radio" id="opt1" checked>
+            <label for="opt1" class="option">Popularity</label>
+          <input class="selectopt" name="test" type="radio" id="opt2">
+            <label for="opt2" class="option">Date</label>
+          <input class="selectopt" name="test" type="radio" id="opt3">
+            <label for="opt3" class="option">Price</label>
+        </div> -->
+
         <section class="photographersMedias" id="photographersMedias"></section>
       </main>
     

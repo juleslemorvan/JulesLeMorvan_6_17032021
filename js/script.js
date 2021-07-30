@@ -1,10 +1,10 @@
 // Fetch Data
 
-const data = "./data.json";
+const dataPath = "./data.json";
 const photographersCards = document.getElementById("photographersCards");
 
 // Data from json file
-fetch("./data.json")
+fetch(dataPath)
   .then((res) => {
     return res.json();
   })
