@@ -4,6 +4,7 @@ const data = "./data.json";
 
 // recuperation de la chaine de requete dans l'url
 
+// extraction de l'ID
 const urlSearchParams = new URLSearchParams(window.location.search);
 
 // extraction de l'ID
@@ -20,12 +21,12 @@ fetch("./data.json")
 
     displayPhotographerInfosFromData(photographer);
 
-    const media = data.media.filter(
+    const medias = data.media.filter(
       (media) => media.photographerId === parseInt(id)
     );
 
-    displayLikesAndPriceFromData(photographer, media);
-    displayMediaFromData(photographer, media);
+    displayLikesAndPriceFromData(photographer, medias);
+    displayMediaFromData(photographer, medias);
   })
   .catch((err) => {
     console.log(err);
@@ -82,26 +83,23 @@ function displayMediaFromData(photographer, medias) {
   medias.forEach((media, index) => {
     photographersMedias.innerHTML += `
 
-            <article id="${
-              media.id
-            }" class="media-photographer" onclick="openModal(); currentSlide(${
-      index + 1
-    })">
+            <article id="${media.id}" class="media-photographer" >
               <figure>
                 <a class="photographerMedia">
                   <img
                     class="photographerMedia-img"
                     src="./assets/images/${name}/${media.image}"
                     alt="media"
+                    onclick="openModal(); currentSlide(${index + 1})"
                     
                   />
                 </a>
                 <figcaption class="legendeMedia">
                   <p class="titleMedia">${media.titleMedia}</p>
                   <p class="prixMedia">${media.price}€</p>
-                  <p class="likeMedia">${
-                    media.likes
-                  }<i class="fas fa-heart"></i></p>
+                  <p class="likeMedia" id="heart_${media.id}">${
+      media.likes
+    }<i class="fas fa-heart"></i></p>
                 </figcaption>
               </figure>
             </article>
@@ -116,33 +114,23 @@ function displayMediaFromData(photographer, medias) {
 function addLikes() {
   const likes = document.querySelector(".likeMedia");
   likes.addEventListener("click", (e) => {
-    e.stopPropagation();
-    console.log("yo");
+    e.target.innerText = parseInt(e.target.innerText) + 1;
+    countLikes(medias);
   });
 }
-
-// function getFileExtension(media) {
-//   let array;
-//   if (!media.video) {
-//     array = media.image.split(".");
-//   } else {
-//     array = media.video.split(".");
-//   }
-//   return array[array.length - 1];
-// }
 
 function displayLikesAndPriceFromData(photographer, media) {
   const likesAndPrice = document.getElementById("likesAndPrice");
   likesAndPrice.innerHTML += `
   <div class="bottomLikesAndPrice">
-  <p>${countLikes(media)}<i class="fas fa-heart"></i></p>
-  <p>${photographer.price} €/jour</p>
+  <p>${countLikes(media)} <i class="fas fa-heart"></i></p>
+  <p>${photographer.price}€/jour</p>
   </div>
   `;
 }
-function countLikes(media) {
+function countLikes(medias) {
   let total = 0;
-  media.forEach((media) => {
+  medias.forEach((media) => {
     total += media.likes;
   });
   return total;

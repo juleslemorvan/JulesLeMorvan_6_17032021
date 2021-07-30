@@ -6,14 +6,19 @@
 const dataPath = "./data.json";
 let jsonData;
 
+let medias;
+
 // Data from json file
 fetch(dataPath)
   .then((res) => {
     return res.json();
   })
   .then((data) => {
-    jsonData = data;
-    orderMediaByPopularity(data.media);
+    medias = data.media.filter(
+      (media) => media.photographerId === parseInt(id)
+    );
+
+    orderMediaByPopularity();
   })
   .catch((err) => {
     console.log(err);
@@ -21,6 +26,7 @@ fetch(dataPath)
 
 // function  compare by price (price)
 let selectOpen = false;
+
 let options = document.querySelectorAll(".option-item");
 options.forEach(function (option) {
   addClickEvent(option);
@@ -40,17 +46,17 @@ function addClickEvent(elem) {
 
     switch (selectedOption.innerText) {
       case "Popularity":
-        orderMediaByPopularity(jsonData.media);
+        orderMediaByPopularity();
         console.log("popularity");
         break;
 
       case "Price":
-        orderMediaByPrice(jsonData.media);
+        orderMediaByPrice();
         console.log("price");
         break;
 
       default:
-      //
+        orderMediaByDate();
     }
   });
 }
@@ -88,48 +94,54 @@ function showAllItems() {
 
 function comparePrice(media1, media2) {
   if (media1.price > media2.price) {
-    return 1;
-  } else if (media1.price < media2.price) {
     return -1;
+  } else if (media1.price < media2.price) {
+    return 1;
   } else {
     return 0;
   }
 }
 
-function orderMediaByPrice(JSON_medias) {
-  let medias = document.querySelectorAll(".media-photographer");
-  for (let i = 0; i < medias.length; i++) {
-    medias[i].remove();
+function orderMediaByPrice() {
+  let mediasHTML = document.querySelectorAll(".media-photographer");
+  for (let i = 0; i < mediasHTML.length; i++) {
+    mediasHTML[i].remove();
   }
 
-  JSON_medias.sort(comparePrice);
-  console.log(JSON_medias);
+  medias.sort(comparePrice);
+  let main = document.getElementById("photographersMedias");
+  medias.forEach((media) => {
+    mediasHTML.forEach((mediaHTML) => {
+      if (mediaHTML.id == media.id) {
+        main.appendChild(mediaHTML);
+      }
+    });
+  });
 }
 
 // function  compare by Popularity (likes)
 function comparePopularity(media1, media2) {
   if (media1.likes > media2.likes) {
-    return 1;
-  } else if (media1.likes < media2.likes) {
     return -1;
+  } else if (media1.likes < media2.likes) {
+    return 1;
   } else {
     return 0;
   }
 }
 
-function orderMediaByPopularity(JSON_medias) {
-  let medias = document.querySelectorAll(".media-photographer");
-  for (let i = 0; i < medias.length; i++) {
-    medias[i].remove();
+function orderMediaByPopularity() {
+  let mediasHTML = document.querySelectorAll(".media-photographer");
+  for (let i = 0; i < mediasHTML.length; i++) {
+    mediasHTML[i].remove();
   }
 
-  JSON_medias.sort(comparePopularity);
-  console.log(JSON_medias);
+  medias.sort(comparePopularity);
   let main = document.getElementById("photographersMedias");
-  JSON_medias.forEach((Json_media) => {
-    medias.forEach((media) => {
-      if (media.id == Json_media.id) {
-        main.appendChild(media);
+  medias.forEach((media) => {
+    mediasHTML.forEach((mediaHTML) => {
+      if (mediaHTML.id == media.id) {
+        main.appendChild(mediaHTML);
       }
     });
   });
@@ -140,20 +152,29 @@ function compareDate(media1, media2) {
   let date1 = new Date(media1.date);
   let date2 = new Date(media2.date);
   if (date1 > date2) {
-    return 1;
-  } else if (date1 < date2) {
     return -1;
+  } else if (date1 < date2) {
+    return 1;
   } else {
     return 0;
   }
 }
 
-function orderMediaByDate(JSON_medias) {
-  let medias = document.querySelectorAll(".media-photographer");
-  for (let i = 0; i < medias.length; i++) {
-    medias[i].remove();
+function orderMediaByDate() {
+  let mediasHTML = document.querySelectorAll(".media-photographer");
+  for (let i = 0; i < mediasHTML.length; i++) {
+    mediasHTML[i].remove();
   }
 
-  JSON_medias.sort(compareDate);
-  console.log(JSON_medias);
+  medias.sort(compareDate);
+  console.log(medias);
+
+  let main = document.getElementById("photographersMedias");
+  medias.forEach((media) => {
+    mediasHTML.forEach((mediaHTML) => {
+      if (mediaHTML.id == media.id) {
+        main.appendChild(mediaHTML);
+      }
+    });
+  });
 }

@@ -1347,6 +1347,14 @@ footer {
 .button-select {
   width: 200px;
   background: #901c1c;
+  margin-left: 20px;
+}
+
+.p-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 50px;
 }
 
 .selected-item {
