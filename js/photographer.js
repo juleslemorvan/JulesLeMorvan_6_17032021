@@ -97,9 +97,9 @@ function displayMediaFromData(photographer, medias) {
                 <figcaption class="legendeMedia">
                   <p class="titleMedia">${media.titleMedia}</p>
                   <p class="prixMedia">${media.price}€</p>
-                  <p class="likeMedia" id="heart_${media.id}">${
-      media.likes
-    }<i class="fas fa-heart"></i></p>
+                  <p class="likeMedia">${
+                    media.likes
+                  }<i class="fas fa-heart heartDislike" ></i></p>
                 </figcaption>
               </figure>
             </article>
@@ -112,26 +112,39 @@ function displayMediaFromData(photographer, medias) {
 }
 
 function addLikes() {
-  const likes = document.querySelector(".likeMedia");
-  likes.addEventListener("click", (e) => {
-    e.target.innerText = parseInt(e.target.innerText) + 1;
-    countLikes(medias);
+  const likes = document.querySelectorAll(".likeMedia");
+  let countLike = document.getElementById("countLike");
+  likes.forEach((like) => {
+    like.childNodes[1].addEventListener("click", function (e) {
+      if (e.target.classList.contains("heartDislike")) {
+        like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) + 1;
+        e.target.classList.toggle("heartDislike");
+        countLike.firstChild.nodeValue =
+          parseInt(countLike.firstChild.nodeValue) + 1;
+      } else {
+        like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) - 1;
+        e.target.classList.toggle("heartDislike");
+        countLike.firstChild.nodeValue =
+          parseInt(countLike.firstChild.nodeValue) - 1;
+      }
+    });
   });
 }
 
-function displayLikesAndPriceFromData(photographer, media) {
-  const likesAndPrice = document.getElementById("likesAndPrice");
-  likesAndPrice.innerHTML += `
-  <div class="bottomLikesAndPrice">
-  <p>${countLikes(media)} <i class="fas fa-heart"></i></p>
-  <p>${photographer.price}€/jour</p>
-  </div>
-  `;
-}
 function countLikes(medias) {
   let total = 0;
   medias.forEach((media) => {
     total += media.likes;
   });
   return total;
+}
+
+function displayLikesAndPriceFromData(photographer, media) {
+  const likesAndPrice = document.getElementById("likesAndPrice");
+  likesAndPrice.innerHTML += `
+  <div class="bottomLikesAndPrice">
+  <p id="countLike">${countLikes(media)} <i class="fas fa-heart"></i></p>
+  <p>${photographer.price}€/jour</p>
+  </div>
+  `;
 }
