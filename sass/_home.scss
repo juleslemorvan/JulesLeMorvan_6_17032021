@@ -7,20 +7,30 @@ html {
 }
 .header {
   display: flex;
-  width: 70%;
-  align-items: flex-start;
+  width: 100%;
+  align-items: center;
   height: 2rem;
-  padding: 30px 30px;
+  padding: 50px 30px;
+  vertical-align: middle;
 }
-.header__logo {
-  margin: 10px 20px;
-}
+
 header a {
-  margin-left: -20px;
+  width: 16%;
+  margin-right: 30px;
 }
+
+.header__logo {
+  font-size: 2rem;
+  margin: 10px 20px;
+  width: 100%;
+}
+
 .nav {
   display: flex;
-  margin-left: 35px;
+  justify-content: center;
+  margin-left: 25px;
+  margin-right: 25px;
+
   &__navigation {
     display: flex;
     justify-content: center;
@@ -31,7 +41,7 @@ header a {
       cursor: pointer;
       color: $color-primary;
       font-weight: 500;
-      padding: 0.3rem;
+      padding: 0.2rem;
       margin: 0.2rem;
       border: solid 0.1rem $color-tertiary-txt;
       border-radius: 1.5rem;
@@ -48,17 +58,25 @@ header a {
   }
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-primary;
+  width: 16%;
+}
+
 .homePage {
   position: relative;
 }
 
-.title {
-  position: absolute;
-  top: -30px;
-  right: 0px;
-  margin-right: 70px;
-  color: $color-primary;
-}
+// @media screen and (max-width: 1245px) {
+//   .title {
+//     top: -30px;
+//     right: 20px;
+//     margin-right: 70px;
+//   }
+// }
 .photographersCards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

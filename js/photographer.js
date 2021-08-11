@@ -83,7 +83,7 @@ function displayMediaFromData(photographer, medias) {
   medias.forEach((media, index) => {
     photographersMedias.innerHTML += `
 
-            <article id="${media.id}" class="media-photographer" >
+            <article id="${media.id}"class="media-photographer" >
               <figure>
                 <a class="photographerMedia">
                   <img
@@ -116,14 +116,13 @@ function addLikes() {
   let countLike = document.getElementById("countLike");
   likes.forEach((like) => {
     like.childNodes[1].addEventListener("click", function (e) {
+      e.target.classList.toggle("heartDislike");
       if (e.target.classList.contains("heartDislike")) {
         like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) + 1;
-        e.target.classList.toggle("heartDislike");
         countLike.firstChild.nodeValue =
           parseInt(countLike.firstChild.nodeValue) + 1;
       } else {
         like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) - 1;
-        e.target.classList.toggle("heartDislike");
         countLike.firstChild.nodeValue =
           parseInt(countLike.firstChild.nodeValue) - 1;
       }

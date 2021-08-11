@@ -352,23 +352,29 @@ html body {
 
 .header {
   display: flex;
-  width: 70%;
-  align-items: flex-start;
+  width: 100%;
+  align-items: center;
   height: 2rem;
-  padding: 30px 30px;
-}
-
-.header__logo {
-  margin: 10px 20px;
+  padding: 50px 30px;
+  vertical-align: middle;
 }
 
 header a {
-  margin-left: -20px;
+  width: 16%;
+  margin-right: 30px;
+}
+
+.header__logo {
+  font-size: 2rem;
+  margin: 10px 20px;
+  width: 100%;
 }
 
 .nav {
   display: flex;
-  margin-left: 35px;
+  justify-content: center;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 .nav__navigation {
   display: flex;
@@ -381,7 +387,7 @@ header a {
   cursor: pointer;
   color: #901c1c;
   font-weight: 500;
-  padding: 0.3rem;
+  padding: 0.2rem;
   margin: 0.2rem;
   border: solid 0.1rem #525252;
   border-radius: 1.5rem;
@@ -396,16 +402,16 @@ header a {
   color: #fff;
 }
 
-.homePage {
-  position: relative;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #901c1c;
+  width: 16%;
 }
 
-.title {
-  position: absolute;
-  top: -30px;
-  right: 0px;
-  margin-right: 70px;
-  color: #901c1c;
+.homePage {
+  position: relative;
 }
 
 .photographersCards {
@@ -574,6 +580,10 @@ html body {
   border: solid 1px #525252;
   border-radius: 1.5rem;
   font-family: "DM Sans", sans-serif;
+}
+
+.tagline {
+  text-align: center;
 }
 
 .photographerInfos-center {
