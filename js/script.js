@@ -9,54 +9,20 @@ fetch(dataPath)
     return res.json();
   })
   .then((data) => {
-    displayPhotographerFromData(data);
+    photographerUtilities.displayPhotographerFromData(data);
   })
   .catch((err) => {
     console.log(err);
   });
 
-function onClickNavTag() {
-  const tags = document.querySelectorAll(".nav__navigation__item");
-  tags.forEach((tag) => {
-    tag.addEventListener("click", (e) => {
-      console.log(e.target.getAttribute("target"));
-      e.target.classList.toggle("active");
-      photographersCards.classList.toggle(e.target.getAttribute("target"));
-      const actives = document.querySelectorAll(
-        ".nav__navigation__item.active"
-      );
-      if (actives.length === 0) {
-        photographersCards.classList.add("all");
-      } else {
-        photographersCards.classList.remove("all");
-      }
-    });
-  });
-}
+class photographerUtilities {
+  static displayPhotographerFromData(data) {
+    const photographersCards = document.querySelector(".photographersCards");
+    data.photographers.forEach((photographer) => {
+      console.log(photographer);
 
-function displayTagsClass(tags) {
-  return tags.join(" ");
-}
-
-function displayTags(tags) {
-  return `
-           <ul class="tagList">
-           ${tags
-             .map(function (tag) {
-               return `<li class="tagItem">${tag}</li>`;
-             })
-             .join(" ")}
-           </ul>
-           `;
-}
-
-function displayPhotographerFromData(data) {
-  const photographersCards = document.querySelector(".photographersCards");
-  data.photographers.forEach((photographer) => {
-    console.log(photographer);
-
-    photographersCards.innerHTML += `
-            <figure class="photographers-profil ${displayTagsClass(
+      photographersCards.innerHTML += `
+            <figure class="photographers-profil ${photographerUtilities.displayTagsClass(
               photographer.tags
             )}" >
 
@@ -70,14 +36,50 @@ function displayPhotographerFromData(data) {
               <figcaption class="legende">
                       <p class="name">${photographer.name}</p>
                       <p class="position">${photographer.city}, ${
-      photographer.country
-    }</p>
+        photographer.country
+      }</p>
                       <p class="tagline">${photographer.tagline}</p>
                       <p class="price">${photographer.price} $ / jours</p>
-                  ${displayTags(photographer.tags)}
+                  ${photographerUtilities.displayTags(photographer.tags)}
               </figcaption>
             </figure>
             `;
-  });
-  onClickNavTag();
+    });
+    photographerUtilities.onClickNavTag();
+  }
+
+  static onClickNavTag() {
+    const tags = document.querySelectorAll(".nav__navigation__item");
+    tags.forEach((tag) => {
+      tag.addEventListener("click", (e) => {
+        console.log(e.target.getAttribute("target"));
+        e.target.classList.toggle("active");
+        photographersCards.classList.toggle(e.target.getAttribute("target"));
+        const actives = document.querySelectorAll(
+          ".nav__navigation__item.active"
+        );
+        if (actives.length === 0) {
+          photographersCards.classList.add("all");
+        } else {
+          photographersCards.classList.remove("all");
+        }
+      });
+    });
+  }
+
+  static displayTagsClass(tags) {
+    return tags.join(" ");
+  }
+
+  static displayTags(tags) {
+    return `
+           <ul class="tagList">
+           ${tags
+             .map(function (tag) {
+               return `<li class="tagItem">${tag}</li>`;
+             })
+             .join(" ")}
+           </ul>
+           `;
+  }
 }

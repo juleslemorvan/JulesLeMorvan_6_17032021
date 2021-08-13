@@ -19,46 +19,34 @@ fetch("./data.json")
       (photographer) => photographer.id === parseInt(id)
     );
 
-    displayPhotographerInfosFromData(photographer);
+    PhotographerInfosUtilities.displayPhotographerInfosFromData(photographer);
 
     const medias = data.media.filter(
       (media) => media.photographerId === parseInt(id)
     );
 
-    displayLikesAndPriceFromData(photographer, medias);
-    displayMediaFromData(photographer, medias);
+    PhotographerLikesAndPricesUtilities.displayLikesAndPriceFromData(
+      photographer,
+      medias
+    );
+    PhotographerMediaUtilities.displayMediaFromData(photographer, medias);
   })
   .catch((err) => {
     console.log(err);
   });
 
-function displayTagsPhotographer(tags) {
-  return tags.join(" ");
-}
+class PhotographerInfosUtilities {
+  static displayPhotographerInfosFromData(photographer) {
+    const photographersInfos = document.getElementById("photographerInfos");
 
-function displayTagsOk(tags) {
-  return `
-           <ul class="tagList">
-           ${tags
-             .map(function (tag) {
-               return `<li class="tagItem">#${tag}</li>`;
-             })
-             .join(" ")}
-           </ul>
-           `;
-}
-
-function displayPhotographerInfosFromData(photographer) {
-  const photographersInfos = document.getElementById("photographerInfos");
-
-  photographersInfos.innerHTML += `
+    photographersInfos.innerHTML += `
             <div class="photographerInfos-left">
             <p class="photographerInfos-name">${photographer.name}</p>
             <p class="photographerInfos-location">${photographer.city}, ${
-    photographer.country
-  }</p>
+      photographer.country
+    }</p>
             <p class="photographerInfos-line">${photographer.tagline}</p>
-            ${displayTagsOk(photographer.tags)}
+            ${PhotographerInfosUtilities.displayTagsOk(photographer.tags)}
           </div>
           <div class="photographerInfos-center">
             <button class="modalBtn" id="modalBtn">Contactez-moi</button>
@@ -73,17 +61,30 @@ function displayPhotographerInfosFromData(photographer) {
             </a>
           </div>
         `;
-  initModal();
+    initModal();
+  }
+  static displayTagsOk(tags) {
+    return `
+           <ul class="tagList">
+           ${tags
+             .map(function (tag) {
+               return `<li class="tagItem">#${tag}</li>`;
+             })
+             .join(" ")}
+           </ul>
+           `;
+  }
 }
 
-function displayMediaFromData(photographer, medias) {
-  const photographersMedias = document.getElementById("photographersMedias");
-  const name = photographer.name.split(" ")[0].replace("-", " ");
+class PhotographerMediaUtilities {
+  static displayMediaFromData(photographer, medias) {
+    const photographersMedias = document.getElementById("photographersMedias");
+    const name = photographer.name.split(" ")[0].replace("-", " ");
 
-  medias.forEach((media, index) => {
-    photographersMedias.innerHTML += `
+    medias.forEach((media, index) => {
+      photographersMedias.innerHTML += `
 
-            <article id="${media.id}"class="media-photographer" >
+            <article id="${media.id}" class="media-photographer" >
               <figure>
                 <a class="photographerMedia">
                   <img
@@ -106,44 +107,49 @@ function displayMediaFromData(photographer, medias) {
 
         `;
 
-    displayMediaLightbox(media, name);
-    addLikes();
-  });
-}
-
-function addLikes() {
-  const likes = document.querySelectorAll(".likeMedia");
-  let countLike = document.getElementById("countLike");
-  likes.forEach((like) => {
-    like.childNodes[1].addEventListener("click", function (e) {
-      e.target.classList.toggle("heartDislike");
-      if (e.target.classList.contains("heartDislike")) {
-        like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) + 1;
-        countLike.firstChild.nodeValue =
-          parseInt(countLike.firstChild.nodeValue) + 1;
-      } else {
-        like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) - 1;
-        countLike.firstChild.nodeValue =
-          parseInt(countLike.firstChild.nodeValue) - 1;
-      }
+      Lightbox.displayMediaLightbox(media, name);
+      PhotographerMediaUtilities.addLikes();
     });
-  });
+  }
+
+  static addLikes() {
+    const likes = document.querySelectorAll(".likeMedia");
+    let countLike = document.getElementById("countLike");
+    likes.forEach((like) => {
+      like.childNodes[1].addEventListener("click", function (e) {
+        if (e.target.classList.contains("heartDislike")) {
+          like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) + 1;
+          countLike.firstChild.nodeValue =
+            parseInt(countLike.firstChild.nodeValue) + 1;
+        } else {
+          like.firstChild.nodeValue = parseInt(like.firstChild.nodeValue) - 1;
+          countLike.firstChild.nodeValue =
+            parseInt(countLike.firstChild.nodeValue) - 1;
+        }
+        e.target.classList.toggle("heartDislike");
+      });
+    });
+  }
 }
 
-function countLikes(medias) {
-  let total = 0;
-  medias.forEach((media) => {
-    total += media.likes;
-  });
-  return total;
-}
-
-function displayLikesAndPriceFromData(photographer, media) {
-  const likesAndPrice = document.getElementById("likesAndPrice");
-  likesAndPrice.innerHTML += `
+class PhotographerLikesAndPricesUtilities {
+  static displayLikesAndPriceFromData(photographer, media) {
+    const likesAndPrice = document.getElementById("likesAndPrice");
+    likesAndPrice.innerHTML += `
   <div class="bottomLikesAndPrice">
-  <p id="countLike">${countLikes(media)} <i class="fas fa-heart"></i></p>
+  <p id="countLike">${PhotographerLikesAndPricesUtilities.countLikes(
+    media
+  )} <i class="fas fa-heart"></i></p>
   <p>${photographer.price}€/jour</p>
   </div>
   `;
+  }
+
+  static countLikes(medias) {
+    let total = 0;
+    medias.forEach((media) => {
+      total += media.likes;
+    });
+    return total;
+  }
 }
