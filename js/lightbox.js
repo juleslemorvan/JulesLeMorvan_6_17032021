@@ -1,3 +1,11 @@
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
 class Lightbox {
   static displayMediaLightbox(media, name) {
     const modalContent = document.getElementById("modal-content");
@@ -58,12 +66,4 @@ function showSlides(n) {
 
 function currentSlide(n) {
   showSlides((slideIndex = n));
-}
-
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
 }

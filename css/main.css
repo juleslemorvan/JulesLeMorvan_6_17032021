@@ -354,18 +354,18 @@ html body {
   display: flex;
   width: 100%;
   align-items: center;
-  height: 2rem;
-  padding: 50px 30px;
-  vertical-align: middle;
+  padding: 60px 70px;
+  margin-top: 20px;
 }
 
 header a {
-  width: 16%;
+  flex-grow: 0;
   margin-right: 30px;
+  min-width: 200px;
 }
 
 .header__logo {
-  font-size: 2rem;
+  font-size: 50px;
   margin: 10px 20px;
   width: 100%;
 }
@@ -375,6 +375,8 @@ header a {
   justify-content: center;
   margin-left: 25px;
   margin-right: 25px;
+  flex-grow: 1;
+  flex-wrap: wrap;
 }
 .nav__navigation {
   display: flex;
@@ -407,9 +409,34 @@ header a {
   justify-content: center;
   align-items: center;
   color: #901c1c;
-  width: 16%;
+  font-size: 2.2rem;
+  flex-grow: 0;
+  white-space: nowrap;
 }
 
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header a {
+    width: 50%;
+    margin-right: 0;
+  }
+
+  .header__logo {
+    max-width: 150px;
+  }
+
+  .nav {
+    width: 100%;
+    order: 2;
+  }
+
+  .title {
+    width: 50%;
+  }
+}
 .homePage {
   position: relative;
 }
@@ -423,6 +450,7 @@ header a {
   margin: 0;
   align-items: center;
   justify-content: center;
+  align-items: flex-start;
 }
 .photographersCards .photographers-profil {
   display: flex;
@@ -433,8 +461,8 @@ header a {
   display: none;
 }
 .photographersCards .photographers-profil__portrait {
-  width: 280px;
-  height: 280px;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -447,22 +475,25 @@ header a {
 .photographersCards .photographers-profil .legende .name {
   color: #d3573c;
   padding: 10px 0 5px 10px;
-  font-size: 32px;
+  font-size: 2rem;
   margin: 0;
 }
 .photographersCards .photographers-profil .legende .position {
   padding-bottom: 5px;
   margin: 0;
   color: #901c1c;
+  font-size: 1.3rem;
 }
 .photographersCards .photographers-profil .legende .tagline {
   margin: 0;
   padding-bottom: 5px;
+  font-size: 1.2rem;
 }
 .photographersCards .photographers-profil .legende .price {
   padding-bottom: 5px;
   margin: 0;
   color: #757575;
+  font-size: 1.2rem;
 }
 .photographersCards .photographers-profil .legende .tagList {
   display: flex;
@@ -471,6 +502,7 @@ header a {
   align-items: center;
   margin: 0;
   padding: 0;
+  font-size: 1.2rem;
 }
 .photographersCards .photographers-profil .legende .tagItem {
   color: #901c1c;
@@ -511,21 +543,15 @@ header a {
   display: flex;
 }
 
-html body {
-  font-family: "DM Sans", sans-serif;
-  max-width: 1440px;
-  margin: auto;
-  padding-left: 70px;
-  padding-right: 70px;
+.photographer-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 40px;
 }
 
 .photographer-header {
   margin-top: 50px;
-  padding-left: 50px;
-}
-
-.photographer-container {
-  margin-top: 40px;
+  padding-left: 60px;
 }
 
 .photographerInfos {
@@ -588,14 +614,15 @@ html body {
 
 .photographerInfos-center {
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalBtn {
   cursor: pointer;
-  position: absolute;
-  top: 45px;
   background: #901c1c;
-  height: 70px;
+  height: 80px;
   width: 180px;
   border-radius: 8px;
   color: white;
@@ -1024,7 +1051,7 @@ input {
   top: 19%;
 }
 
-.close {
+.closeModalForm {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -1036,8 +1063,8 @@ input {
   transform: scale(0.7);
 }
 
-.close:before,
-.close:after {
+.closeModalForm:before,
+.closeModalForm:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -1046,11 +1073,11 @@ input {
   background-color: #fff;
 }
 
-.close:before {
+.closeModalForm:before {
   transform: rotate(45deg);
 }
 
-.close:after {
+.closeModalForm:after {
   transform: rotate(-45deg);
 }
 

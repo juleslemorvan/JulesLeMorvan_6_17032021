@@ -297,7 +297,7 @@ input {
   left: 21%;
   top: 19%;
 }
-.close {
+.closeModalForm {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -308,8 +308,8 @@ input {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close:before,
-.close:after {
+.closeModalForm:before,
+.closeModalForm:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -317,10 +317,10 @@ input {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+.closeModalForm:before {
   transform: rotate(45deg);
 }
-.close:after {
+.closeModalForm:after {
   transform: rotate(-45deg);
 }
 .btn-submit,

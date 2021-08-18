@@ -1,20 +1,12 @@
-html {
-  body {
-    font-family: $font-1;
-    max-width: 1440px;
-    margin: auto;
-    padding-left: 70px;
-    padding-right: 70px;
-  }
+.photographer-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 40px;
 }
 
 .photographer-header {
   margin-top: 50px;
-  padding-left: 50px;
-}
-
-.photographer-container {
-  margin-top: 40px;
+  padding-left: 60px;
 }
 
 .photographerInfos {
@@ -72,14 +64,16 @@ html {
 }
 .photographerInfos-center {
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalBtn {
   cursor: pointer;
-  position: absolute;
-  top: 45px;
+
   background: $color-primary;
-  height: 70px;
+  height: 80px;
   width: 180px;
   border-radius: 8px;
   color: white;

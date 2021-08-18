@@ -18,10 +18,6 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-function closeModal() {
-  modalbg.style.display = "none";
-}
-
 // Function input firstName must contain at least 2 characters and match the regex
 function checkFirst() {
   const nameValid = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$/;
@@ -100,13 +96,11 @@ function validate(event) {
 
 function initModal() {
   modalbg = document.querySelector(".bground");
-  console.log("modalbg", modalbg);
 
   modalBtn = document.querySelectorAll(".modalBtn");
-  console.log("modalBtn", modalBtn);
 
   formData = document.querySelectorAll(".formData");
-  closeBtn = document.querySelector(".close");
+  closeBtn = document.querySelector(".closeModalForm");
   submitForm = document.getElementById("submit");
   form = document.getElementById("form");
   successForm = document.getElementById("successForm");
@@ -130,7 +124,12 @@ function initModal() {
   modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
   // close modal event
-  closeBtn.addEventListener("click", closeModal);
+  console.log("closeBtn", closeBtn);
+
+  closeBtn.addEventListener("click", () => {
+    console.log("test");
+    modalbg.style.display = "none";
+  });
 
   form.addEventListener("submit", validate);
 }

@@ -22,8 +22,8 @@ class photographerUtilities {
       console.log(photographer);
 
       photographersCards.innerHTML += `
-            <figure class="photographers-profil ${photographerUtilities.displayTagsClass(
-              photographer.tags
+            <figure class="photographers-profil ${photographer.tags.join(
+              " "
             )}" >
 
               <a href="./photographer-page.html?id=${photographer.id}">
@@ -65,10 +65,6 @@ class photographerUtilities {
         }
       });
     });
-  }
-
-  static displayTagsClass(tags) {
-    return tags.join(" ");
   }
 
   static displayTags(tags) {
