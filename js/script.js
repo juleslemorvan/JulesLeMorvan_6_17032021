@@ -19,8 +19,6 @@ class photographerUtilities {
   static displayPhotographerFromData(data) {
     const photographersCards = document.querySelector(".photographersCards");
     data.photographers.forEach((photographer) => {
-      console.log(photographer);
-
       photographersCards.innerHTML += `
             <figure class="photographers-profil ${photographer.tags.join(
               " "
@@ -52,7 +50,6 @@ class photographerUtilities {
     const tags = document.querySelectorAll(".nav__navigation__item");
     tags.forEach((tag) => {
       tag.addEventListener("click", (e) => {
-        console.log(e.target.getAttribute("target"));
         e.target.classList.toggle("active");
         photographersCards.classList.toggle(e.target.getAttribute("target"));
         const actives = document.querySelectorAll(

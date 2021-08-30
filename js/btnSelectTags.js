@@ -66,12 +66,10 @@ function addClickEvent(elem) {
     switch (selectedOption.innerText) {
       case "Popularity":
         SortUtilities.orderMediaByPopularity();
-        console.log("popularity");
         break;
 
       case "Price":
         orderMediaByPrice();
-        console.log("price");
         break;
 
       default:

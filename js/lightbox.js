@@ -48,7 +48,6 @@ function plusSlides(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  console.log(slides);
 
   if (n > slides.length) {
     slideIndex = 1;
@@ -59,8 +58,7 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  console.log(slideIndex - 1);
-  console.log(slides[slideIndex - 1]);
+
   slides[slideIndex - 1].style.display = "block";
 }
 

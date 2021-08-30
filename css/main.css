@@ -420,6 +420,8 @@ header a {
   }
 
   .header a {
+    display: flex;
+    justify-content: center;
     width: 50%;
     margin-right: 0;
   }
@@ -430,11 +432,34 @@ header a {
 
   .nav {
     width: 100%;
+    margin-top: 30px;
     order: 2;
   }
 
   .title {
     width: 50%;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 675px) {
+  .header a {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-right: 0;
+  }
+
+  .header__logo {
+    max-width: 150px;
+  }
+
+  .nav__navigation__item {
+    font-size: 0.9rem;
+  }
+
+  .title {
+    width: 50%;
+    font-size: 1.2rem;
   }
 }
 .homePage {
@@ -446,7 +471,7 @@ header a {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 55px 53px;
-  padding: 5rem 1rem 0;
+  padding: 3rem 1rem 0;
   margin: 0;
   align-items: center;
   justify-content: center;
@@ -543,6 +568,198 @@ header a {
   display: flex;
 }
 
+@media screen and (max-width: 1101px) {
+  .photographersCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 37px;
+    padding: 1rem 1rem 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .photographersCards .photographers-profil__portrait {
+    width: 16rem;
+    height: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 725px) {
+  .photographersCards {
+    grid-template-columns: 1fr 1fr;
+    gap: 37px;
+    padding: 1rem 1rem 0;
+  }
+
+  .photographersCards .photographers-profil__portrait {
+    width: 12rem;
+    height: 11rem;
+  }
+
+  .photographersCards .photographers-profil .legende .name {
+    font-size: 1.3rem;
+  }
+
+  .photographersCards .photographers-profil .legende .position {
+    font-size: 1rem;
+  }
+
+  .photographersCards .photographers-profil .legende .tagline {
+    font-size: 1rem;
+  }
+
+  .photographersCards .photographers-profil .legende .price {
+    font-size: 0.9rem;
+  }
+
+  .photographersCards .photographers-profil .legende .tagList {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 577px) {
+  .photographersCards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 1rem 1rem 0;
+  }
+
+  .photographersCards .photographers-profil__portrait {
+    width: 15rem;
+    height: 14rem;
+  }
+
+  .photographersCards .photographers-profil .legende .name {
+    font-size: 1.7rem;
+  }
+
+  .photographersCards .photographers-profil .legende .position {
+    font-size: 1.3rem;
+  }
+
+  .photographersCards .photographers-profil .legende .tagline {
+    font-size: 1rem;
+  }
+
+  .photographersCards .photographers-profil .legende .price {
+    font-size: 0.9rem;
+  }
+
+  .photographersCards .photographers-profil .legende .tagList {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 40px 10px;
+    margin-top: 20px;
+  }
+
+  .header a {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-right: 0;
+  }
+
+  .header__logo {
+    max-width: 150px;
+  }
+
+  .nav {
+    margin-top: 20px;
+  }
+
+  .nav__navigation__item {
+    font-size: 0.9rem;
+  }
+
+  .title {
+    width: 50%;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .header {
+    padding: 40px 0px;
+    margin-top: 20px;
+  }
+
+  .header a {
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-right: 0;
+  }
+
+  .header__logo {
+    max-width: 150px;
+  }
+
+  .nav__navigation__item {
+    font-size: 0.7rem;
+  }
+
+  .title {
+    flex-grow: 0;
+    font-size: 1rem;
+    font-size: 16px;
+    width: 150px;
+  }
+
+  .homePage {
+    padding: 0;
+    margin: 0;
+  }
+
+  .photographersCards {
+    padding: 0;
+  }
+  .photographersCards .photographers-profil .legende .tagList {
+    flex-wrap: nowrap;
+  }
+
+  .photographersCards .photographers-profil .legende .tagList {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .title {
+    flex-grow: 0;
+    font-size: 1rem;
+    font-size: 13px;
+    width: 127px;
+  }
+
+  .header__logo {
+    max-width: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 321px) {
+  .title {
+    flex-grow: 0;
+    font-size: 1rem;
+    font-size: 13px;
+    width: 90px;
+  }
+
+  .header__logo {
+    max-width: 120px;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+}
 .photographer-container {
   padding-left: 40px;
   padding-right: 40px;
@@ -677,7 +894,7 @@ header a {
 .photographerMedia-img {
   width: 380px;
   height: 330px;
-  border-radius: 30px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -721,7 +938,7 @@ header a {
   height: 60px;
   width: 300px;
   bottom: 0;
-  right: 30px;
+  right: 100px;
   background: #f77c61;
   border-radius: 6px;
 }
@@ -734,6 +951,22 @@ header a {
   height: 100%;
 }
 
+@media screen and (max-width: 425px) {
+  .photographer-container {
+    width: 100%;
+    padding-top: 30px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .photographersMedias {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+}
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);

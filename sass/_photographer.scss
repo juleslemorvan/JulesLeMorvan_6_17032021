@@ -130,7 +130,7 @@
 .photographerMedia-img {
   width: 380px;
   height: 330px;
-  border-radius: 30px;
+  border-radius: 10px;
   object-fit: cover;
 }
 .legendeMedia {
@@ -171,7 +171,7 @@
   height: 60px;
   width: 300px;
   bottom: 0;
-  right: 30px;
+  right: 100px;
   background: #f77c61;
   border-radius: 6px;
 }
@@ -182,3 +182,27 @@
   font-size: 20px;
   height: 100%;
 }
+
+// Responsif
+
+@media screen and (max-width: 425px) {
+  .photographer-container {
+    width: 100%;
+    padding-top: 30px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .photographersMedias {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+
+  .media-photographer {
+  }
+}
+
+// enlever la minwidth qui fais chié

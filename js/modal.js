@@ -91,6 +91,7 @@ function validate(event) {
     successBtn.style.display = "flex";
     successForm.style.display = "flex";
     successBtn.addEventListener("click", closeModal);
+    // envoi de mail ici
   }
 }
 
