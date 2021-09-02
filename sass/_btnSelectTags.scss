@@ -54,7 +54,8 @@
 
 .option-item {
   display: none;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 25px;
   align-items: center;
   font-family: $font-1;
   font-weight: 500;
@@ -64,4 +65,10 @@
   font-size: 0.8em;
   background-color: $color-primary;
   border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 1187px) {
+  .select-container {
+    display: none;
+  }
 }
