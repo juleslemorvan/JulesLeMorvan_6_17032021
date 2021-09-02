@@ -1625,7 +1625,7 @@ footer {
   margin: 0 20px;
 }
 
-/* Correction responsif */
+/*  responsif */
 @media screen and (max-width: 1109px) and (min-width: 841px) {
   .header-logo {
     display: flex;
@@ -1757,6 +1757,8 @@ footer {
 }
 
 .button-select {
+  position: absolute;
+  left: 205px;
   width: 200px;
   background: #901c1c;
   margin-left: 20px;
