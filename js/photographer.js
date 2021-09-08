@@ -86,7 +86,7 @@ class PhotographerMediaUtilities {
 
             <article id="${media.id}" class="media-photographer" >
               <figure>
-                <a class="photographerMedia">
+                <a class="photographerMedia" aria-label="${media.titleMedia}">
                   <img
                     class="photographerMedia-img"
                     src="./assets/images/${name}/${media.image}"
@@ -108,7 +108,24 @@ class PhotographerMediaUtilities {
         `;
 
       Lightbox.displayMediaLightbox(media, name);
+
       PhotographerMediaUtilities.addLikes();
+    });
+    document.addEventListener("keydown", function (e) {
+      switch (e.keyCode) {
+        case 37:
+          document.getElementById("prev").click();
+          break;
+        case 38:
+          console.log("up");
+          break;
+        case 39:
+          document.getElementById("next").click();
+          break;
+        case 40:
+          console.log("down");
+          break;
+      }
     });
   }
 

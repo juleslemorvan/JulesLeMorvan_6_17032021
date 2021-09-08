@@ -116,6 +116,7 @@
             class="button btn-submit"
             type="button"
             value="Close"
+            aria-label="Fermer"
           />
         </div> 
             </form>
@@ -125,10 +126,10 @@
 
           <!-- modals générés via js ici -->
           <div class="modal" id="myModal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <span class="close cursor" aria-label="Fermer" onclick="closeModal()">&times;</span>
             <div id="modal-content" class="modal-content">
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              <a class="prev" onclick="plusSlides(-1)" id="prev">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)" id="next">&#10095;</a>
               
 
               
