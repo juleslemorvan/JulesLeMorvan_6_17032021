@@ -52,11 +52,13 @@ class PhotographerInfosUtilities {
             <button class="modalBtn" id="modalBtn">Contactez-moi</button>
           </div>
           <div class="photographerInfos-right">
-            <a class="photographerInfos-picture">
+            <a class="photographerInfos-picture" aria-label="photo portrait de ${
+              photographer.name
+            }">
               <img
                 class="photographerInfos-img"
                 src="./assets/images/Portraits/${photographer.portrait}"
-                alt="photo portrait du photographe"
+                alt="photo portrait de ${photographer.name}"
               />
             </a>
           </div>

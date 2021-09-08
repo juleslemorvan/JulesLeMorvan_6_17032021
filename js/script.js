@@ -24,7 +24,9 @@ class photographerUtilities {
               " "
             )}" >
 
-              <a href="./photographer-page.html?id=${photographer.id}">
+              <a href="./photographer-page.html?id=${
+                photographer.id
+              }" aria-label=" photo portrait de ${photographer.name}">
                   <img
                     class="photographers-profil__portrait"
                     src="./assets/images/Portraits/${photographer.portrait}"
