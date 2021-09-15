@@ -41,14 +41,16 @@ class PhotographerInfosUtilities {
 
     photographersInfos.innerHTML += `
             <div class="photographerInfos-left">
-            <p class="photographerInfos-name">${photographer.name}</p>
+            <p class="photographerInfos-name" aria-label="name of photographer">${
+              photographer.name
+            }</p>
             <p class="photographerInfos-location">${photographer.city}, ${
       photographer.country
     }</p>
             <p class="photographerInfos-line">${photographer.tagline}</p>
             ${PhotographerInfosUtilities.displayTagsOk(photographer.tags)}
           </div>
-          <div class="photographerInfos-center">
+          <div class="photographerInfos-center" role="button">
             <button class="modalBtn" id="modalBtn">Contactez-moi</button>
           </div>
           <div class="photographerInfos-right">
@@ -67,10 +69,10 @@ class PhotographerInfosUtilities {
   }
   static displayTagsOk(tags) {
     return `
-           <ul class="tagList">
+           <ul class="tagList" role="list">
            ${tags
              .map(function (tag) {
-               return `<li class="tagItem">#${tag}</li>`;
+               return `<li class="tagItem" role="list Item">#${tag}</li>`;
              })
              .join(" ")}
            </ul>
@@ -86,7 +88,9 @@ class PhotographerMediaUtilities {
     medias.forEach((media, index) => {
       photographersMedias.innerHTML += `
 
-            <article id="${media.id}" class="media-photographer" >
+            <article id="${
+              media.id
+            }" class="media-photographer" aria-label=" all of the photographer's media">
               <figure>
                 <a class="photographerMedia" aria-label="${media.titleMedia}">
                   <img
@@ -155,7 +159,7 @@ class PhotographerLikesAndPricesUtilities {
   static displayLikesAndPriceFromData(photographer, media) {
     const likesAndPrice = document.getElementById("likesAndPrice");
     likesAndPrice.innerHTML += `
-  <div class="bottomLikesAndPrice">
+  <div class="bottomLikesAndPrice" aria-label="general informations">
   <p id="countLike">${PhotographerLikesAndPricesUtilities.countLikes(
     media
   )} <i class="fas fa-heart"></i></p>

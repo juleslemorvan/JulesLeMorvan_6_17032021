@@ -21,33 +21,53 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <header class="header">
-      <a href="" class="header__link" aria-label="FishEye page home">
+    <header class="header" role="banner">
+      <a href="" class="header__link" aria-label="FishEye homePage">
         <img
           class="header__logo"
           src="./assets/images/logo.svg"
           alt="logo FishEye"
         />
       </a>
-      <nav class="nav" aria-label="catégories de photographes">
-        <ul class="nav__navigation">
-          <li class="nav__navigation__item" target="portrait">#Portrait</li>
-          <li class="nav__navigation__item" target="art">#Art</li>
-          <li class="nav__navigation__item" target="fashion">#Fashion</li>
-          <li class="nav__navigation__item" target="architecture">
+      <nav class="nav" aria-label="navigation" role="navigation">
+        <ul
+          class="nav__navigation"
+          role="list"
+          aria-label="list of photographers"
+        >
+          <li class="nav__navigation__item" target="portrait" role="item">
+            #Portrait
+          </li>
+          <li class="nav__navigation__item" target="art" role="item">#Art</li>
+          <li class="nav__navigation__item" target="fashion" role="item">
+            #Fashion
+          </li>
+          <li class="nav__navigation__item" target="architecture" role="item">
             #Architecture
           </li>
-          <li class="nav__navigation__item" target="travel">#Travel</li>
-          <li class="nav__navigation__item" target="sport">#Sport</li>
-          <li class="nav__navigation__item" target="animals">#Animals</li>
-          <li class="nav__navigation__item" target="events">#Events</li>
+          <li class="nav__navigation__item" target="travel" role="item">
+            #Travel
+          </li>
+          <li class="nav__navigation__item" target="sport" role="item">
+            #Sport
+          </li>
+          <li class="nav__navigation__item" target="animals" role="item">
+            #Animals
+          </li>
+          <li class="nav__navigation__item" target="events" role="item">
+            #Events
+          </li>
         </ul>
       </nav>
       <h2 class="title">Nos Photographes</h2>
     </header>
 
-    <main class="homePage" id="homePage">
-      <section class="photographersCards all" id="photographersCards"></section>
+    <main class="homePage" id="homePage" role="main">
+      <section
+        class="photographersCards all"
+        id="photographersCards"
+        aria-label="all the photographers"
+      ></section>
     </main>
 
     <script src="./js/script.js"></script>

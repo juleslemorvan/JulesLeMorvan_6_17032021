@@ -12,11 +12,11 @@
   </head>
   <body>
     <div class="photographer-container">
-      <header class="photographer-header">
+      <header class="photographer-header" role="banner">
         <a
           href="./index.html"
           class="photographer__header__link"
-          aria-label="FishEye page photographer"
+          aria-label="FishEye homepage"
         >
           <img
             class="header__logo__photographer"
@@ -25,11 +25,11 @@
           />
         </a>
       </header>
-      <main class="photographer-container">
-        <div class="photographerInfos" id="photographerInfos"></div>
-        <div class="select-container">
+      <main class="photographer-container" role="main">
+        <div class="photographerInfos" id="photographerInfos" role="presentation"></div>
+        <div class="select-container" role="select">
         <p class="p-select">Trier par</p>
-        <div class="button-select">
+        <div class="button-select" role="button">
           <div class="selected-item" id="selected-option">
             <p class="selected-text" id="selected-text">Popularity</p>
             <i class="fas fa-arrow-down" id="arrow-down"></i>
@@ -54,6 +54,8 @@
               action="index.html"
               method="POST"
               novalidate
+              aria-labelledby="coordonate"
+              role="contact"
             >
               <div
                 class="formData">
@@ -63,6 +65,8 @@
                   type="text"
                   id="first"
                   name="first"
+                  aria-labelledby="first name"
+                  aria-describedby="your first name"
                 /><br>
               </div>
               
@@ -74,6 +78,8 @@
                   type="text"
                   id="last"
                   name="last"
+                  aria-labelledby="last name"
+                  aria-describedby="your last name"
                 /><br>
               </div>
               
@@ -85,6 +91,8 @@
                   type="email"
                   id="email"
                   name="email"
+                  aria-labelledby="email"
+                  aria-describedby="your email"
                 /><br>
               </div>
 
@@ -96,6 +104,8 @@
                   type="text"
                   id="textarea"
                   name="textarea"
+                  aria-labelledby="message"
+                  aria-describedby="your message"
                 /><br>
               </div>
       
@@ -127,9 +137,9 @@
           <!-- modals générés via js ici -->
           <div class="modal" id="myModal">
             <span class="close cursor" aria-label="Fermer" onclick="closeModal()">&times;</span>
-            <div id="modal-content" class="modal-content">
-              <a class="prev" onclick="plusSlides(-1)" id="prev">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)" id="next">&#10095;</a>
+            <div id="modal-content" class="modal-content" aria-label="media panorama">
+              <a class="prev" onclick="plusSlides(-1)" id="prev" role="precedent">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)" id="next" role="next">&#10095;</a>
               
 
               

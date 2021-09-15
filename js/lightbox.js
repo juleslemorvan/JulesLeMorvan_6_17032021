@@ -22,14 +22,14 @@ class Lightbox {
     if (fileExtension == "jpg") {
       modalContent.innerHTML += `
     <div class="mySlides">
-      <img src="assets/images/${name}/${media.image}" aria-label="${media.titleMedia}" style="width:100%">
+      <img src="assets/images/${name}/${media.image}" aria-label="${media.titleMedia}" role="img" style="width:100%">
     </div>
     `;
     } else {
       modalContent.innerHTML += `
     <div class="mySlides">
       <video class="videoModal" width="80%" height="100%" controls>
-        <source src="assets/images/${name}/${media.video}" type="video/mp4" aria-label="${media.titleMedia}">
+        <source src="assets/images/${name}/${media.video}" type="video/mp4" aria-label="${media.titleMedia}" role="video">
         Your browser does not support the video tag.
       </video>
     </div>
