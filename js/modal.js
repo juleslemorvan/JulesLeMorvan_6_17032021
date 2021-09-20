@@ -23,12 +23,12 @@ function checkFirst() {
   const nameValid = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$/;
   if (
     nameValid.exec(first.value.trim()) === null ||
-    first.value.trim().length < 2
+    first.value.trim().length < 3
   ) {
     first.parentElement.setAttribute("data-error-visible", "true");
     first.parentElement.setAttribute(
       "data-error",
-      "Veuillez renseigner un Prénom valide (2 carracteres min)"
+      "Veuillez renseigner un Prénom valide (3 carracteres min)"
     );
     formOk = false;
   } else {

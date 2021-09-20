@@ -51,7 +51,7 @@ class PhotographerInfosUtilities {
             ${PhotographerInfosUtilities.displayTagsOk(photographer.tags)}
           </div>
           <div class="photographerInfos-center" role="button">
-            <button class="modalBtn" id="modalBtn">Contactez-moi</button>
+            <button class="modalBtn" id="modalBtn" aria-labelledby="button" >Contactez-moi</button>
           </div>
           <div class="photographerInfos-right">
             <a class="photographerInfos-picture" aria-label="photo portrait de ${
