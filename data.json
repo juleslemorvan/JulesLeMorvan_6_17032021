@@ -8,7 +8,8 @@
       "tags": ["portrait", "events", "travel", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "MimiKeel.jpg"
+      "portrait": "MimiKeel.jpg",
+      "alt": "photo portrait de Mim Keel"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -326,7 +327,8 @@
       "likes": 88,
       "date": "2019-02-03",
       "price": 45,
-      "description": "Seul dans les montagnes"
+      "description": "Seul dans les montagnes",
+      "alt": "Un personne seule dans les montagnes"
     },
     {
       "id": 625025343,
@@ -336,7 +338,8 @@
       "titleMedia": "Village méditéranéen",
       "likes": 85,
       "date": "2019-04-03",
-      "price": 45
+      "price": 45,
+      "alt": "typique Village méditéranéen situé a flanc de falaise"
     },
     {
       "id": 2525345343,
@@ -346,7 +349,8 @@
       "titleMedia": "Portrait d'enfant",
       "likes": 34,
       "date": "2019-04-07",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait d'enfant allongé dans l'herbe"
     },
     {
       "id": 2523434634,
@@ -356,7 +360,8 @@
       "titleMedia": "Portrait de femme",
       "likes": 63,
       "date": "2019-04-07",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait d'une femme s'accoudant sur un fauteuil"
     },
     {
       "id": 398847109,
@@ -366,7 +371,8 @@
       "titleMedia": "Portrait de femme",
       "likes": 55,
       "date": "2019-06-20",
-      "price": 45
+      "price": 45,
+      "alt": "Portrait d'une femme avec un background noir"
     },
     {
       "id": 2534342,
@@ -376,7 +382,8 @@
       "titleMedia": "Marriage à la mer",
       "likes": 25,
       "date": "2019-06-21",
-      "price": 45
+      "price": 45,
+      "alt": "Photo de mariage d'un coupe qui s'enlace au bord de la mer"
     },
     {
       "id": 65235234,
@@ -386,7 +393,8 @@
       "titleMedia": "Photo de marriage",
       "likes": 52,
       "date": "2019-06-25",
-      "price": 45
+      "price": 45,
+      "alt": "Photo de mariage d'un coupe qui s'enlace"
     },
     {
       "id": 23523434,
@@ -396,7 +404,8 @@
       "titleMedia": "Danse des marriés",
       "likes": 77,
       "date": "2019-06-28",
-      "price": 45
+      "price": 45,
+      "alt": "Photo de mariage d'un coupe qui s'enlace devant le public"
     },
     {
       "id": 5234343,
@@ -407,7 +416,8 @@
       "titleMedia": "Chevaux Sauvages",
       "likes": 142,
       "date": "2019-08-23",
-      "price": 60
+      "price": 60,
+      "alt": "Vidéo d'un troupeaux de chevaux qui cours dans une plaine"
     },
     {
       "id": 95234343,
@@ -417,7 +427,8 @@
       "titleMedia": "Animaux colorés",
       "likes": 59,
       "date": "2019-07-02",
-      "price": 60
+      "price": 60,
+      "alt": "Photo d'un oiseau aux multiples couleurs'"
     },
     {
       "id": 52343416,
