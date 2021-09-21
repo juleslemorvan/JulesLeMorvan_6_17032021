@@ -96,7 +96,7 @@ class PhotographerMediaUtilities {
                   <img
                     class="photographerMedia-img"
                     src="./assets/images/${name}/${media.image}"
-                    alt="media"
+                    alt="${media.alt}"
                     onclick="openModal(); currentSlide(${index + 1})"
                     
                   />

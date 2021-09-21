@@ -30,11 +30,11 @@ class photographerUtilities {
                   <img
                     class="photographers-profil__portrait"
                     src="./assets/images/Portraits/${photographer.portrait}"
-                    alt="${photographer.name}'s profile"
+                    alt="${photographer.alt}"
                   />
               </a>
               <figcaption class="legende">
-                      <p class="name">${photographer.name}</p>
+                      <h2 class="name">${photographer.name}</h2>
                       <p class="position">${photographer.city}, ${
         photographer.country
       }</p>

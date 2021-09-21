@@ -9,7 +9,7 @@
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
       "portrait": "MimiKeel.jpg",
-      "alt": "photo portrait de Mim Keel"
+      "alt": "photo portrait du photographe Mimi Keel"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -19,7 +19,8 @@
       "tags": ["sports", "architecture"],
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-      "portrait": "EllieRoseWilkens.jpg"
+      "portrait": "EllieRoseWilkens.jpg",
+      "alt": "photo portrait du photographe Elli-Rose Wilkens"
     },
     {
       "name": "Tracy Galindo",
@@ -29,7 +30,8 @@
       "tags": ["art", "fashion", "events"],
       "tagline": "Photographe freelance",
       "price": 500,
-      "portrait": "TracyGalindo.jpg"
+      "portrait": "TracyGalindo.jpg",
+      "alt": "photo portrait du photographe Tracy Galindo"
     },
     {
       "name": "Nabeel Bradford",
@@ -39,7 +41,8 @@
       "tags": ["travel", "portrait"],
       "tagline": "Toujours aller de l'avant",
       "price": 350,
-      "portrait": "NabeelBrandford.jpg"
+      "portrait": "NabeelBrandford.jpg",
+      "alt": "photo portrait du photographe Nabeel Bradford"
     },
     {
       "name": "Rhode Dubois",
@@ -49,7 +52,8 @@
       "tags": ["sport", "fashion", "events", "animals"],
       "tagline": "Je crée des souvenirs",
       "price": 275,
-      "portrait": "RhodeDubois.jpg"
+      "portrait": "RhodeDubois.jpg",
+      "alt": "photo portrait du photographe Rhode Dubois"
     },
     {
       "name": "Marcel Nikolic",
@@ -59,7 +63,8 @@
       "tags": ["travel", "architecture"],
       "tagline": "Toujours Ã&nbsp; la recherche de LA photo",
       "price": 300,
-      "portrait": "MarcelNikolic.jpg"
+      "portrait": "MarcelNikolic.jpg",
+      "alt": "photo portrait du photographe Marcel Nicolic"
     }
   ],
   "media": [
@@ -328,7 +333,7 @@
       "date": "2019-02-03",
       "price": 45,
       "description": "Seul dans les montagnes",
-      "alt": "Un personne seule dans les montagnes"
+      "alt": "Une personne seule dans les montagnes"
     },
     {
       "id": 625025343,
