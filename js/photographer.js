@@ -50,8 +50,8 @@ class PhotographerInfosUtilities {
             <p class="photographerInfos-line">${photographer.tagline}</p>
             ${PhotographerInfosUtilities.displayTagsOk(photographer.tags)}
           </div>
-          <div class="photographerInfos-center" role="button">
-            <button class="modalBtn" id="modalBtn" aria-labelledby="button" >Contactez-moi</button>
+          <div class="photographerInfos-center" >
+            <button class="modalBtn" id="modalBtn"  role="button" tabindex="0">Contactez-moi</button>
           </div>
           <div class="photographerInfos-right">
             <a class="photographerInfos-picture" aria-label="photo portrait de ${
@@ -97,6 +97,7 @@ class PhotographerMediaUtilities {
                     class="photographerMedia-img"
                     src="./assets/images/${name}/${media.image}"
                     alt="${media.alt}"
+                    onkeypress="openModal(); currentSlide(${index + 1})"
                     onclick="openModal(); currentSlide(${index + 1})"
                     
                   />

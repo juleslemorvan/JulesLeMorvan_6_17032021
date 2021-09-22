@@ -36,6 +36,8 @@ class SortUtilities {
     medias.forEach((media) => {
       mediasHTML.forEach((mediaHTML) => {
         if (mediaHTML.id == media.id) {
+          console.log(mediaHTML.firstChild);
+
           main.appendChild(mediaHTML);
         }
       });
