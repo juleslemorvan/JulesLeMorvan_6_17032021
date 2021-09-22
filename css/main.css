@@ -474,13 +474,11 @@ header a {
   padding: 3rem 1rem 0;
   margin: 0;
   align-items: center;
-  justify-content: center;
   align-items: flex-start;
 }
 .photographersCards .photographers-profil {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding-bottom: 3rem;
   display: none;
@@ -494,7 +492,6 @@ header a {
 .photographersCards .photographers-profil .legende {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 .photographersCards .photographers-profil .legende .name {

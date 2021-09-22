@@ -41,9 +41,9 @@ class PhotographerInfosUtilities {
 
     photographersInfos.innerHTML += `
             <div class="photographerInfos-left">
-            <p class="photographerInfos-name" aria-label="name of photographer">${
+            <h1 class="photographerInfos-name" aria-label="name of photographer">${
               photographer.name
-            }</p>
+            }</h1>
             <p class="photographerInfos-location">${photographer.city}, ${
       photographer.country
     }</p>
@@ -97,6 +97,7 @@ class PhotographerMediaUtilities {
                     class="photographerMedia-img"
                     src="./assets/images/${name}/${media.image}"
                     alt="${media.alt}"
+                    tabindex="0"
                     onkeypress="openModal(); currentSlide(${index + 1})"
                     onclick="openModal(); currentSlide(${index + 1})"
                     

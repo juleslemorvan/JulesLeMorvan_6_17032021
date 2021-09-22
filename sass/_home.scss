@@ -132,13 +132,13 @@ header a {
   padding: 3rem 1rem 0;
   margin: 0;
   align-items: center;
-  justify-content: center;
+
   align-items: flex-start;
 
   .photographers-profil {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
     padding-bottom: 3rem;
     display: none;
@@ -152,7 +152,7 @@ header a {
     .legende {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+
       align-items: center;
 
       .name {
