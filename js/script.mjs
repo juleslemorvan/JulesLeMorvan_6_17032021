@@ -1,19 +1,12 @@
-// Fetch Data
+import getJsonData from "./fetch.js";
 
-const dataPath = "./data.json";
 const photographersCards = document.getElementById("photographersCards");
 
-// Data from json file
-fetch(dataPath)
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    photographerUtilities.displayPhotographerFromData(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+getJsonData(main);
+
+function main(data) {
+  photographerUtilities.displayPhotographerFromData(data);
+}
 
 class photographerUtilities {
   static displayPhotographerFromData(data) {
@@ -52,6 +45,7 @@ class photographerUtilities {
     const tags = document.querySelectorAll(".nav__navigation__item");
     tags.forEach((tag) => {
       tag.addEventListener("click", (e) => {
+        e.preventDefault();
         e.target.classList.toggle("active");
         photographersCards.classList.toggle(e.target.getAttribute("target"));
         const actives = document.querySelectorAll(

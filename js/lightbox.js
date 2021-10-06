@@ -6,38 +6,6 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
-class Lightbox {
-  static displayMediaLightbox(media, name) {
-    const modalContent = document.getElementById("modal-content");
-    let splittedPath;
-    //console.log(media.image);
-    if (!media.video) {
-      splittedPath = media.image.split(".");
-    } else {
-      splittedPath = media.video.split(".");
-    }
-
-    const fileExtension = splittedPath[splittedPath.length - 1];
-
-    if (fileExtension == "jpg") {
-      modalContent.innerHTML += `
-    <div class="mySlides">
-      <img src="assets/images/${name}/${media.image}" aria-label="${media.titleMedia}" role="img" style="width:100%">
-    </div>
-    `;
-    } else {
-      modalContent.innerHTML += `
-    <div class="mySlides">
-      <video class="videoModal" width="80%" height="100%" controls>
-        <source src="assets/images/${name}/${media.video}" type="video/mp4" aria-label="${media.titleMedia}" role="video">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    `;
-    }
-  }
-}
-
 var slideIndex = 1;
 
 // Next/previous controls

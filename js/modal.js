@@ -72,6 +72,7 @@ function checkEmail() {
 //function Validate form
 
 function validate(event) {
+  console.log("validate");
   event.preventDefault();
   formOk = true;
 
@@ -92,6 +93,7 @@ function validate(event) {
     successForm.style.display = "flex";
     successBtn.addEventListener("click", closeModal);
     // envoi de mail ici
+    console.log("first name : ", document.getElementById("first").value);
   }
 }
 
@@ -104,6 +106,7 @@ function initModal() {
   closeBtn = document.querySelector(".closeModalForm");
   submitForm = document.getElementById("submit");
   form = document.getElementById("form");
+  form.style.display = "block";
   successForm = document.getElementById("successForm");
   successBtn = document.getElementById("successBtn");
 
@@ -113,6 +116,10 @@ function initModal() {
   last = document.getElementById("last");
   email = document.getElementById("email");
   textarea = document.getElementById("textarea");
+  first.value = "";
+  last.value = "";
+  email.value = "";
+  textarea.value = "";
 
   error = document.querySelectorAll("[data-error]");
 
@@ -130,6 +137,7 @@ function initModal() {
   closeBtn.addEventListener("click", () => {
     console.log("test");
     modalbg.style.display = "none";
+    initModal();
   });
 
   form.addEventListener("submit", validate);

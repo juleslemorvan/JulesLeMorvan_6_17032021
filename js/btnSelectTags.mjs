@@ -1,59 +1,52 @@
-// 100, 0, 10 --> base
+import getJsonData from "./fetch.js";
 
-// 0, 100, 10
-// 0, 10, 100
+let selectOpen = false;
+let options = document.querySelectorAll(".option-item");
 
-const dataPath = "./data.json";
-let jsonData;
+getJsonData(main);
 
-let medias;
+function main(data) {
+  // extraction de l'ID
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const id = urlSearchParams.get("id");
 
-// Data from json file
-fetch(dataPath)
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    medias = data.media.filter(
-      (media) => media.photographerId === parseInt(id)
-    );
+  let medias = data.media.filter(
+    (media) => media.photographerId === parseInt(id)
+  );
 
-    SortUtilities.orderMediaByPopularity();
-  })
-  .catch((err) => {
-    console.log(err);
+  orderMediaByPopularity(medias);
+
+  options.forEach(function (option) {
+    addClickEvent(option, medias);
   });
 
-class SortUtilities {
-  static orderMediaByPopularity() {
-    let mediasHTML = document.querySelectorAll(".media-photographer");
-    for (let i = 0; i < mediasHTML.length; i++) {
-      mediasHTML[i].remove();
-    }
-
-    medias.sort(comparePopularity);
-    let main = document.getElementById("photographersMedias");
-    medias.forEach((media) => {
-      mediasHTML.forEach((mediaHTML) => {
-        if (mediaHTML.id == media.id) {
-          console.log(mediaHTML.firstChild);
-
-          main.appendChild(mediaHTML);
-        }
-      });
+  document
+    .getElementById("selected-option")
+    .addEventListener("click", function () {
+      switchArrow();
+      showAllItems();
+      selectOpen = !selectOpen;
     });
-  }
 }
 
-// function  compare by price (price)
-let selectOpen = false;
+function orderMediaByPopularity(medias) {
+  let mediasHTML = document.querySelectorAll(".media-photographer");
+  for (let i = 0; i < mediasHTML.length; i++) {
+    mediasHTML[i].remove();
+  }
 
-let options = document.querySelectorAll(".option-item");
-options.forEach(function (option) {
-  addClickEvent(option);
-});
+  medias.sort(comparePopularity);
+  let main = document.getElementById("photographersMedias");
+  medias.forEach((media) => {
+    mediasHTML.forEach((mediaHTML) => {
+      if (mediaHTML.id == media.id) {
+        main.appendChild(mediaHTML);
+      }
+    });
+  });
+}
 
-function addClickEvent(elem) {
+function addClickEvent(elem, medias) {
   elem.addEventListener("click", function (event) {
     let selectedOption = document.getElementById("selected-text");
     let oldTextOption = selectedOption.innerText;
@@ -67,15 +60,15 @@ function addClickEvent(elem) {
 
     switch (selectedOption.innerText) {
       case "Popularity":
-        SortUtilities.orderMediaByPopularity();
+        orderMediaByPopularity(medias);
         break;
 
       case "Price":
-        orderMediaByPrice();
+        orderMediaByPrice(medias);
         break;
 
       default:
-        orderMediaByDate();
+        orderMediaByDate(medias);
     }
   });
 }
@@ -89,16 +82,6 @@ function switchArrow() {
     document.getElementById("arrow-up").style.display = "inline";
   }
 }
-
-document
-  .getElementById("selected-option")
-  .addEventListener("click", function () {
-    switchArrow();
-    showAllItems();
-    selectOpen = !selectOpen;
-  });
-
-document.getElementById("order-date").addEventListener("click", function () {});
 
 function showAllItems() {
   let options = document.querySelectorAll(".option-item");
@@ -121,7 +104,7 @@ function comparePrice(media1, media2) {
   }
 }
 
-function orderMediaByPrice() {
+function orderMediaByPrice(medias) {
   let mediasHTML = document.querySelectorAll(".media-photographer");
   for (let i = 0; i < mediasHTML.length; i++) {
     mediasHTML[i].remove();
@@ -162,7 +145,7 @@ function compareDate(media1, media2) {
   }
 }
 
-function orderMediaByDate() {
+function orderMediaByDate(medias) {
   let mediasHTML = document.querySelectorAll(".media-photographer");
   for (let i = 0; i < mediasHTML.length; i++) {
     mediasHTML[i].remove();
