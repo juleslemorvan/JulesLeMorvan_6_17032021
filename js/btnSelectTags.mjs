@@ -63,8 +63,8 @@ function addClickEvent(elem, medias) {
         orderMediaByPopularity(medias);
         break;
 
-      case "Price":
-        orderMediaByPrice(medias);
+      case "Titre":
+        orderMediaByTitle(medias);
         break;
 
       default:
@@ -94,23 +94,21 @@ function showAllItems() {
   });
 }
 
-function comparePrice(media1, media2) {
-  if (media1.price > media2.price) {
-    return -1;
-  } else if (media1.price < media2.price) {
-    return 1;
-  } else {
-    return 0;
-  }
+function compareTitle(media1, media2) {
+  let a = media1.titleMedia.charCodeAt(0);
+  let b = media2.titleMedia.charCodeAt(0);
+  return a < b ? -1 : a > b ? 1 : 0;
 }
 
-function orderMediaByPrice(medias) {
+function orderMediaByTitle(medias) {
   let mediasHTML = document.querySelectorAll(".media-photographer");
   for (let i = 0; i < mediasHTML.length; i++) {
     mediasHTML[i].remove();
   }
 
-  medias.sort(comparePrice);
+  medias.sort(compareTitle);
+  console.log(medias);
+
   let main = document.getElementById("photographersMedias");
   medias.forEach((media) => {
     mediasHTML.forEach((mediaHTML) => {
@@ -120,6 +118,22 @@ function orderMediaByPrice(medias) {
     });
   });
 }
+// function orderMediaByPrice(medias) {
+//   let mediasHTML = document.querySelectorAll(".media-photographer");
+//   for (let i = 0; i < mediasHTML.length; i++) {
+//     mediasHTML[i].remove();
+//   }
+
+//   medias.sort(comparePrice);
+//   let main = document.getElementById("photographersMedias");
+//   medias.forEach((media) => {
+//     mediasHTML.forEach((mediaHTML) => {
+//       if (mediaHTML.id == media.id) {
+//         main.appendChild(mediaHTML);
+//       }
+//     });
+//   });
+// }
 
 // function  compare by Popularity (likes)
 function comparePopularity(media1, media2) {
@@ -152,7 +166,6 @@ function orderMediaByDate(medias) {
   }
 
   medias.sort(compareDate);
-  console.log(medias);
 
   let main = document.getElementById("photographersMedias");
   medias.forEach((media) => {

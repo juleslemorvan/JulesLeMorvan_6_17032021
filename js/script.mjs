@@ -1,6 +1,7 @@
 import getJsonData from "./fetch.js";
 
 const photographersCards = document.getElementById("photographersCards");
+const toTop = document.querySelector(".scroll-top");
 
 getJsonData(main);
 
@@ -72,3 +73,16 @@ class photographerUtilities {
            `;
   }
 }
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 150) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+});
+
+toTop.addEventListener("click", function () {
+  e.preventDefault();
+  window.scrollTo(0, 0);
+});

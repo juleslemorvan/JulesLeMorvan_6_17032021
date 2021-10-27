@@ -93,7 +93,10 @@ function validate(event) {
     successForm.style.display = "flex";
     successBtn.addEventListener("click", closeModal);
     // envoi de mail ici
-    console.log("first name : ", document.getElementById("first").value);
+    console.log("First name : ", document.getElementById("first").value);
+    console.log("Last name : ", document.getElementById("last").value);
+    console.log("Email : ", document.getElementById("email").value);
+    console.log("Message: ", document.getElementById("textarea").value);
   }
 }
 
@@ -132,7 +135,13 @@ function initModal() {
   modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
   // close modal event
-  console.log("closeBtn", closeBtn);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key == "Escape") {
+      document.getElementById("bground").style.display = "none";
+      document.getElementById("myModal").style.display = "none";
+    }
+  });
 
   closeBtn.addEventListener("click", () => {
     console.log("test");
