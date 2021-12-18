@@ -2,7 +2,6 @@ let modalbg;
 let modalBtn;
 let formData;
 let closeBtn;
-let submitForm;
 let form;
 let successForm;
 let SuccessBtn;
@@ -17,6 +16,12 @@ let formOk;
 function launchModal() {
   modalbg.style.display = "block";
 }
+
+function getPhotographersNamemodal(photographer) {
+  let name = document.getElementById("photographerNameModal");
+  name.innerHTML = `${photographer.name}`;
+}
+getPhotographersNamemodal(photographer);
 
 // Function input firstName must contain at least 2 characters and match the regex
 function checkFirst() {
@@ -50,7 +55,7 @@ function checkLast() {
     );
     formOk = false;
   } else {
-    first.parentElement.setAttribute("data-error-visible", "false");
+    last.parentElement.setAttribute("data-error-visible", "false");
   }
 }
 // Function input email
@@ -63,6 +68,7 @@ function checkEmail() {
       "data-error",
       "Veuillez renseigner un Email valide"
     );
+
     formOk = false;
   } else {
     email.parentElement.setAttribute("data-error-visible", "false");
@@ -72,8 +78,8 @@ function checkEmail() {
 //function Validate form
 
 function validate(event) {
-  console.log("validate");
   event.preventDefault();
+
   formOk = true;
 
   checkFirst();
@@ -85,13 +91,20 @@ function validate(event) {
   //display the success form
 
   if (formOk) {
-    form.style.display = "none";
+    modalbg.style.display = "none";
+
     successForm.style.fontSize = "50px";
     successForm.style.minHeight = "300px";
     successForm.style.textAlign = "center";
-    successBtn.style.display = "flex";
     successForm.style.display = "flex";
-    successBtn.addEventListener("click", closeModal);
+
+    successBtn.addEventListener("click", function () {
+      successForm.style.display = "none";
+      first.value = "";
+      last.value = "";
+      email.value = "";
+      textarea.value = "";
+    });
     // envoi de mail ici
     console.log("First name : ", document.getElementById("first").value);
     console.log("Last name : ", document.getElementById("last").value);
@@ -102,12 +115,9 @@ function validate(event) {
 
 function initModal() {
   modalbg = document.querySelector(".bground");
-
   modalBtn = document.querySelectorAll(".modalBtn");
-
   formData = document.querySelectorAll(".formData");
   closeBtn = document.querySelector(".closeModalForm");
-  submitForm = document.getElementById("submit");
   form = document.getElementById("form");
   form.style.display = "block";
   successForm = document.getElementById("successForm");
@@ -130,7 +140,7 @@ function initModal() {
 
   // button and message success hidden
   successForm.style.display = "none";
-  successBtn.style.display = "none";
+
   // launch modal event
   modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -140,11 +150,11 @@ function initModal() {
     if (e.key == "Escape") {
       document.getElementById("bground").style.display = "none";
       document.getElementById("myModal").style.display = "none";
+      document.getElementById("successForm").style.display = "none";
     }
   });
 
   closeBtn.addEventListener("click", () => {
-    console.log("test");
     modalbg.style.display = "none";
     initModal();
   });

@@ -25,6 +25,7 @@ function main(data) {
   );
   PhotographerMediaUtilities.displayMediaFromData(photographer, medias);
 }
+// Affichage des infos photographes
 
 class PhotographerInfosUtilities {
   static displayPhotographerInfosFromData(photographer) {

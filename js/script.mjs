@@ -1,3 +1,5 @@
+// Recupération des données du fichier json
+
 import getJsonData from "./fetch.js";
 
 const photographersCards = document.getElementById("photographersCards");
@@ -6,8 +8,12 @@ const toTop = document.querySelector(".scroll-top");
 getJsonData(main);
 
 function main(data) {
+  console.log(data);
+
   photographerUtilities.displayPhotographerFromData(data);
 }
+
+// Affichage des photographes sur la page principales
 
 class photographerUtilities {
   static displayPhotographerFromData(data) {
@@ -42,6 +48,8 @@ class photographerUtilities {
     photographerUtilities.onClickNavTag();
   }
 
+  // Affichage de la navigation
+
   static onClickNavTag() {
     const tags = document.querySelectorAll(".nav__navigation__item");
     tags.forEach((tag) => {
@@ -61,6 +69,8 @@ class photographerUtilities {
     });
   }
 
+  // Affichage des tags de la navigation
+
   static displayTags(tags) {
     return `
            <ul class="tagList">
@@ -73,6 +83,8 @@ class photographerUtilities {
            `;
   }
 }
+
+// Affichage du bouton scroll up
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 150) {

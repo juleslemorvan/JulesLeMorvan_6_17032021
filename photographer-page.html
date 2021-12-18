@@ -26,30 +26,33 @@
         </a>
       </header>
       <main class="photographer-container" role="main">
-        <div class="photographerInfos" id="photographerInfos" role="presentation"></div>
+        <div
+          class="photographerInfos"
+          id="photographerInfos"
+          role="presentation"
+        ></div>
         <div class="select-container" role="select">
-        <p class="p-select">Trier par</p>
-        <div class="button-select" role="filter" aria-labelledby="button" >
-          <div class="selected-item" id="selected-option" tabindex="0">
-            <p class="selected-text" id="selected-text">Popularity</p>
-            <i class="fas fa-arrow-down" id="arrow-down"></i>
-            <i class="fas fa-arrow-up" id="arrow-up"></i>
+          <p class="p-select">Trier par</p>
+          <div class="button-select" role="filter" aria-labelledby="button">
+            <div class="selected-item" id="selected-option" tabindex="0">
+              <p class="selected-text" id="selected-text">Popularity</p>
+              <i class="fas fa-arrow-down" id="arrow-down"></i>
+              <i class="fas fa-arrow-up" id="arrow-up"></i>
+            </div>
+            <div class="option-item" id="order-title">Titre</div>
+            <div class="option-item" id="order-date">Date</div>
           </div>
-          <div class="option-item" id="order-title">Titre</div>
-          <div class="option-item" id="order-date">Date</div>
-        </div>
         </div>
 
         <section class="photographersMedias" id="photographersMedias"></section>
       </main>
-    
+
       <!-- modal formulaire -->
-      
-    <div class="bground" id="bground">
+
+      <div class="bground" id="bground">
         <div class="content">
           <span class="closeModalForm" tabindex="0"></span>
           <div class="modal-body">
-            <h1>Contactez moi</h1>
             <form
               id="form"
               name="reserve"
@@ -59,9 +62,9 @@
               aria-labelledby="coordonate"
               role="contact"
             >
-              <div
-                class="formData">
-                <label for="first">Prénom</label><br>
+              <h1>Contactez moi <span id="photographerNameModal"></span></h1>
+              <div class="formData">
+                <label for="first">Prénom</label><br />
                 <input
                   class="text-control"
                   type="text"
@@ -70,12 +73,11 @@
                   aria-labelledby="first name"
                   aria-describedby="your first name"
                   tabindex="1"
-                /><br>
+                /><br />
               </div>
-              
-              <div
-                class="formData">
-                <label for="last">Nom</label><br>
+
+              <div class="formData">
+                <label for="last">Nom</label><br />
                 <input
                   class="text-control"
                   type="text"
@@ -84,12 +86,11 @@
                   aria-labelledby="last name"
                   aria-describedby="your last name"
                   tabindex="1"
-                /><br>
+                /><br />
               </div>
-              
-              <div
-                class="formData">
-                <label for="email">E-mail</label><br>
+
+              <div class="formData">
+                <label for="email">E-mail</label><br />
                 <input
                   class="text-control"
                   type="email"
@@ -98,12 +99,11 @@
                   aria-labelledby="email"
                   aria-describedby="your email"
                   tabindex="1"
-                /><br>
+                /><br />
               </div>
 
-              <div
-                class="formData">
-                <label for="textarea">Votre message</label><br>
+              <div class="formData">
+                <label for="textarea">Votre message</label><br />
                 <input
                   class="text-control"
                   type="text"
@@ -112,9 +112,9 @@
                   aria-labelledby="message"
                   aria-describedby="your message"
                   tabindex="1"
-                /><br>
+                /><br />
               </div>
-      
+
               <input
                 id="submitForm"
                 class="btn-submit"
@@ -122,42 +122,53 @@
                 class="button"
                 value="C'est parti"
                 tabindex="1"
-
               />
-              </div>
-          <div id="successForm">Merci ! 
-            <br>Votre réservation a été effectué.
-          </div> 
-           <input
-            id="successBtn"
-            class="button btn-submit"
-            type="button"
-            value="Close"
-            aria-label="Fermer"
-          />
-        </div> 
             </form>
           </div>
-          <div class="likesAndPrice" id="likesAndPrice"></div>
+        </div>
+      </div>
+      <div class="bground" id="successForm">
+        <div class="content">
+          <div class="modal-body">
+            Merci !
+            <br />
+            Le photographe vous contactera au plus vite.
 
-
-          <!-- modals générés via js ici -->
-          <div class="modal" id="myModal">
-            <span class="close cursor" aria-label="Fermer" onclick="closeModal()">&times;</span>
-            <div id="modal-content" class="modal-content" aria-label="media panorama">
-              <a class="prev" onclick="plusSlides(-1)" id="prev" role="precedent">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)" id="next" role="next">&#10095;</a>
-              
-
-              
-            </div>
+            <input
+              id="successBtn"
+              class="button btn-submit"
+              type="button"
+              value="Close"
+              aria-label="Fermer"
+            />
           </div>
-          </div>
+        </div>
+      </div>
+      <div class="likesAndPrice" id="likesAndPrice"></div>
+
+      <!-- modals générés via js ici -->
+      <div class="modal" id="myModal">
+        <span class="close cursor" aria-label="Fermer" onclick="closeModal()"
+          >&times;</span
+        >
+        <div
+          id="modal-content"
+          class="modal-content"
+          aria-label="media panorama"
+        >
+          <a class="prev" onclick="plusSlides(-1)" id="prev" role="precedent"
+            >&#10094;</a
+          >
+          <a class="next" onclick="plusSlides(1)" id="next" role="next"
+            >&#10095;</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
   <script src="./js/mediaFactoryPattern.js"></script>
   <script src="./js/modal.js"></script>
   <script type="module" src="./js/photographer.mjs"></script>
   <script type="module" src="./js/btnSelectTags.mjs"></script>
   <script src="./js/lightbox.js"></script>
- 
 </html>
