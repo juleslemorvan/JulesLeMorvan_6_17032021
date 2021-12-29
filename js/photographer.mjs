@@ -12,7 +12,10 @@ function main(data) {
   const photographer = data.photographers.find(
     (photographer) => photographer.id === parseInt(id)
   );
-  console.log(data);
+
+  if (!photographer) {
+    window.location = "index.html";
+  }
 
   PhotographerInfosUtilities.displayPhotographerInfosFromData(photographer);
 
