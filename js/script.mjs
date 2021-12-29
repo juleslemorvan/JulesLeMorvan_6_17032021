@@ -95,6 +95,5 @@ window.addEventListener("scroll", () => {
 });
 
 toTop.addEventListener("click", function () {
-  e.preventDefault();
   window.scrollTo(0, 0);
 });

@@ -15,13 +15,11 @@ let formOk;
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  document.getElementById("first").focus();
+  document.getElementById(
+    "photographerNameModal"
+  ).innerHTML = document.querySelector(".photographerInfos-name").innerHTML;
 }
-
-function getPhotographersNamemodal(photographer) {
-  let name = document.getElementById("photographerNameModal");
-  name.innerHTML = `${photographer.name}`;
-}
-getPhotographersNamemodal(photographer);
 
 // Function input firstName must contain at least 2 characters and match the regex
 function checkFirst() {
@@ -97,6 +95,7 @@ function validate(event) {
     successForm.style.minHeight = "300px";
     successForm.style.textAlign = "center";
     successForm.style.display = "flex";
+    document.getElementById("successBtn").focus();
 
     successBtn.addEventListener("click", function () {
       successForm.style.display = "none";

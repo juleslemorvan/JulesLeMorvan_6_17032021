@@ -12,6 +12,7 @@ function main(data) {
   const photographer = data.photographers.find(
     (photographer) => photographer.id === parseInt(id)
   );
+  console.log(data);
 
   PhotographerInfosUtilities.displayPhotographerInfosFromData(photographer);
 
@@ -30,6 +31,7 @@ function main(data) {
 class PhotographerInfosUtilities {
   static displayPhotographerInfosFromData(photographer) {
     const photographersInfos = document.getElementById("photographerInfos");
+    console.log(photographer);
 
     photographersInfos.innerHTML += `
               <div class="photographerInfos-left">

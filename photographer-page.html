@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
+    <link rel="shortcut icon" type="icon/svg" href="./assets/images/logo.svg" />
     <title>Fisheye - page photographe</title>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -33,15 +34,21 @@
         ></div>
         <div class="select-container" role="select">
           <p class="p-select">Trier par</p>
-          <div class="button-select" role="filter" aria-labelledby="button">
-            <div class="selected-item" id="selected-option" tabindex="0">
+          <button
+            class="button-select"
+            role="filter"
+            aria-labelledby="button"
+            aria-expanded="false"
+            tabindex="0"
+          >
+            <div class="selected-item" id="selected-option">
               <p class="selected-text" id="selected-text">Popularity</p>
               <i class="fas fa-arrow-down" id="arrow-down"></i>
               <i class="fas fa-arrow-up" id="arrow-up"></i>
             </div>
             <div class="option-item" id="order-title">Titre</div>
             <div class="option-item" id="order-date">Date</div>
-          </div>
+          </button>
         </div>
 
         <section class="photographersMedias" id="photographersMedias"></section>
@@ -134,13 +141,14 @@
             <br />
             Le photographe vous contactera au plus vite.
 
-            <input
+            <button
               id="successBtn"
               class="button btn-submit"
               type="button"
-              value="Close"
               aria-label="Fermer"
-            />
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
