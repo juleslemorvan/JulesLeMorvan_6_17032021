@@ -118,22 +118,6 @@ function orderMediaByTitle(medias) {
     });
   });
 }
-// function orderMediaByPrice(medias) {
-//   let mediasHTML = document.querySelectorAll(".media-photographer");
-//   for (let i = 0; i < mediasHTML.length; i++) {
-//     mediasHTML[i].remove();
-//   }
-
-//   medias.sort(comparePrice);
-//   let main = document.getElementById("photographersMedias");
-//   medias.forEach((media) => {
-//     mediasHTML.forEach((mediaHTML) => {
-//       if (mediaHTML.id == media.id) {
-//         main.appendChild(mediaHTML);
-//       }
-//     });
-//   });
-// }
 
 // function  compare by Popularity (likes)
 function comparePopularity(media1, media2) {

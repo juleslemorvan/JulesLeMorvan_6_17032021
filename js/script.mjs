@@ -8,8 +8,6 @@ const toTop = document.querySelector(".scroll-top");
 getJsonData(main);
 
 function main(data) {
-  console.log(data);
-
   photographerUtilities.displayPhotographerFromData(data);
 }
 
