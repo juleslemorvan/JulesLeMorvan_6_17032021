@@ -92,7 +92,7 @@ function validate(event) {
     modalbg.style.display = "none";
 
     successForm.style.fontSize = "50px";
-    successForm.style.minHeight = "300px";
+    successForm.style.maxHeight = "600px";
     successForm.style.textAlign = "center";
     successForm.style.display = "flex";
     document.getElementById("successBtn").focus();
